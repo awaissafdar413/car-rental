@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
@@ -61,10 +60,3 @@
         </div>
     </div>
 </x-app-layout>
-@push('style')
-<style>
-    #d3{
-box-shadow:0px 2px 0px 2px #95929296, inset 5px 1px 1px 2px #00000042 !important;
-}
-</style>
-@endpush
