@@ -18,15 +18,25 @@
                         <div class="padding40 rounded-3 shadow-soft" data-bgcolor="#09060670">
                             <h4>Login</h4>
                             <div class="spacer-10"></div>
-                            <form id="form_register" class="form-border" method="post" action="{{ route('register') }}">
+                            <form id="form_register" class="form-border" method="post" action="{{ route('login') }}">
                                 @csrf
                                 <div class="field-set">
                                     <input type="email" name="email"
                                         id="name" class="form-control" placeholder="Enter Your Email" />
+                                        @error('email')
+                                        <span class="text-danger">
+                                            {{$message}}
+                                        </span>
+                                        @enderror
                                 </div>
                                 <div class="field-set">
                                     <input type="text" name="password" id="name" class="form-control"
                                         placeholder="Enter Your Password" />
+                                        @error('password')
+                                        <span class="text-danger">
+                                            {{$message}}
+                                        </span>
+                                        @enderror
                                 </div>
                                 <div id="submit">
                                     <input type="submit" id="send_message" value="Sign In"
@@ -64,4 +74,5 @@
     </section>
 </div>
 <!-- content close -->
-@endsection()
+@endsection
+

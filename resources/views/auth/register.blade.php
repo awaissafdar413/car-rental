@@ -1,62 +1,97 @@
-<x-app-layout>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="my-5 py-5">
-                    <x-authentication-card>
-                        <h1 class="text-center">Register Your Self
-                        </h1>
-                        <x-validation-errors class="mb-4" />
 
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
 
-                            <div>
-                                <label for="name">Name: </label> <br>
-                                <input id="name" type="text" name="name" style="width: 75%;background:#fff;" class="d3"
-                                    :value="old('name')" required autofocus autocomplete="name" />
+@extends('layout.app')
+@section('slot')
+    <!-- header close -->
+    <!-- content begin -->
+    <div class="no-bottom no-top" id="content">
+        @if (session('status'))
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
+            </div>
+        @endif
+        <div id="top"></div>
+        <section id="section-hero" aria-label="section" class="jarallax">
+            <img src="images/background/2.jpg" class="jarallax-img" alt="">
+            <div class="v-center">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 offset-lg-4">
+                            <div class="padding40 rounded-3 shadow-soft" data-bgcolor="#09060670">
+                                <h4>Login</h4>
+                                <div class="spacer-10"></div>
+                                <form id="form_register" class="form-border" method="post" action="{{ route('register') }}">
+                                    @csrf
+                                    <div class="field-set">
+                                        <input type="text" name="name" id="name" class="form-control"
+                                            placeholder="Enter Your name" />
+                                        @error('name')
+                                            <span class="text-danger">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="field-set">
+                                        <input type="email" name="email" id="name" class="form-control"
+                                            placeholder="Enter Your Email" />
+                                        @error('email')
+                                            <span class="text-danger">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="field-set">
+                                        <input type="text" name="password" id="name" class="form-control"
+                                            placeholder="Enter Your Password" />
+                                        @error('password')
+                                            <span class="text-danger">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="field-set">
+                                        <input type="text" name="password_confirmation" id="name" class="form-control"
+                                            placeholder="Enter Your confirm Password" />
+                                        @error('password_confirmation')
+                                            <span class="text-danger">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div id="submit">
+                                        <input type="submit" id="send_message" value="Sign In"
+                                            class="btn-main btn-fullwidth rounded-3" />
+                                    </div>
+
+                                    @if (Route::has('password.request'))
+                                        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                            href="{{ route('password.request') }}">
+                                            {{ __('Forgot your password?') }}
+                                        </a>
+                                    @endif
+
+                                </form>
+                                <div class="title-line">Or&nbsp;sign&nbsp;up&nbsp;with</div>
+                                <div class="row g-2">
+                                    <div class="mt-3" id="submit">
+                                        <a href="{{ route('register') }}" id="send_message"
+                                            class="btn-main btn-fullwidth rounded-3">Sign Up</a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a class="btn-sc btn-fullwidth mb10" href="#"><img
+                                                src="images/svg/google_icon.svg" alt="">Google</a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a class="btn-sc btn-fullwidth mb10" href="#"><img
+                                                src="images/svg/facebook_icon.svg" alt="">Facebook</a>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="mt-4">
-                                <label for="email">Email:</label> <br>
-                                <input id="email" type="email" name="email" style="width: 75%;background:#fff;" class="d3"
-                                    :value="old('email')" required autocomplete="username" />
-                            </div>
-
-                            <div class="mt-4">
-                                <label for="password">Password:</label> <br>
-                                <input id="password" type="password" class="d3" style="width: 75%;background:#fff;" name="password"
-                                    required autocomplete="new-password" />
-                            </div>
-
-                            <div class="mt-4">
-                                <label for="password_confirmation">Confirm Password</label> <br>
-                                <input id="password_confirmation" class="d3 block mt-1 w-full" type="password"
-                                    style="width: 75%;background:#fff;" name="password_confirmation" required
-                                    autocomplete="new-password" />
-                            </div>
-
-
-
-                            <div class="">
-                                <br>
-                                <x-button class="ms-4 d3 text-black font-bold">
-                                    {{ __('Register') }}
-                                </x-button>
-                                <br>
-                                <br>
-                                <a href="{{ route('login') }}">
-                                    {{ __('Already registered?') }}
-                                </a>
-
-
-                            </div>
-                        </form>
-                    </x-authentication-card>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-2"></div>
-        </div>
+        </section>
     </div>
-</x-app-layout>
+    <!-- content close -->
+@endsection()
