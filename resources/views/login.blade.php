@@ -21,11 +21,11 @@
                             <form id="form_register" class="form-border" method="post" action="{{ route('login') }}">
                                 @csrf
                                 <div class="field-set">
-                                    <input type="text" name="email" value="{{ __('Email') }}" value="old('email')"
+                                    <input type="text" name="email"
                                         id="name" class="form-control" placeholder="Enter Your Email" />
                                 </div>
                                 <div class="field-set">
-                                    <input type="text" name="name" id="name" class="form-control"
+                                    <input type="text" name="password" id="name" class="form-control"
                                         placeholder="Enter Your Password" />
                                 </div>
                                 <div id="submit">

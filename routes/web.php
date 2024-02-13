@@ -25,7 +25,7 @@ Route::get('/booking', function () {
     return view('booking');
 })->name('booking');
 Route::get('/login', function () {
-    return view('login');
+    return view('auth.login');
 })->name('login');
 Route::get('/register', function () {
     return view('auth.register');
