@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('car_name');
             $table->string('car_review');
-            $table->string('car_type');
+            $table->unsignedBigInteger('car_type');
             $table->string('car_image');
             $table->Integer('car_passenger');
             $table->Integer('car_gate');
             $table->Integer('car_rent');
+            // $table->foreign('car_type')->references('car_id')->on('brand');
             $table->timestamps();
         });
     }

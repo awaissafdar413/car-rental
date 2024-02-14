@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class homecontroller extends Controller
 {
     function car_show(){
-        $datas=DB::table('vehicle')->get();
-        return view('car',compact('datas'));
+        $cars=DB::table('vehicle')->get();
+        $types=DB::table('brand')->get();
+        return view('car',compact('cars'));
     }
 }

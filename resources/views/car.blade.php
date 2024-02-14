@@ -192,31 +192,31 @@
 
                 <div class="col-lg-9">
                     <div class="row">
-                        @if ($datas =='')
-                        @foreach ($datas as $data )
+                        @if ($cars =='')
+                        @foreach ($cars as $car )
                         <div class="col-xl-4 col-lg-6">
                             <div class="de-item mb30">
                                 <div class="d-img">
-                                    <img src="{{ $data->car_image }}" class="img-fluid" alt="">
+                                    <img src="{{ $car->car_image }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="d-info">
                                     <div class="d-text">
-                                        <h4>{{ $data->car_name }}</h4>
+                                        <h4>{{ $car->car_name }}</h4>
                                         <div class="d-item_like">
-                                            <i class="fa fa-heart"></i><span>{{ $data->car_review}}</span>
+                                            <i class="fa fa-heart"></i><span>{{ $car->car_review}}</span>
                                         </div>
                                         <div class="d-atr-group">
                                             <span class="d-atr"><img src="images/icons/1-green.svg" alt="">{{
-                                                $data->car_passenger }}</span>
+                                                $car->car_passenger }}</span>
                                             {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
                                             --}}
                                             <span class="d-atr"><img src="images/icons/3-green.svg" alt="">{{
-                                                $data->car_gate }}</span>
+                                                $car->car_gate }}</span>
                                             <span class="d-atr"><img src="images/icons/4-green.svg" alt="">{{
-                                                $data->car_type}}</span>
+                                                $car->car_type}}</span>
                                         </div>
                                         <div class="d-price">
-                                            Daily rate from <span>${{ $data->car_rent}}</span>
+                                            Daily rate from <span>${{ $car->car_rent}}</span>
                                             <a class="btn-main" href="car-single.html">Rent Now</a>
                                         </div>
                                     </div>
