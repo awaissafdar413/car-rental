@@ -27,9 +27,9 @@
                         <div class="item_filter_group">
                             <h4>Vehicle Type</h4>
                             <div class="de_form">
+                                @if ($types == '')
+                                @foreach ($types as $type)
                                 <div class="de_checkbox">
-                                  @if ($types == ' ')
-                                  @foreach ($types as $type)
                                   <input id="vehicle_type_1" name="vehicle_type_1" type="checkbox"
                                       value="{{ $type->name }}">
                                   <label for="{{ $type->name }}">Car</label>
@@ -40,7 +40,7 @@
                                   @endif
                             </div>
                         </div>
-
+{{-- 
                         <div class="item_filter_group">
                             <h4>Car Body Type</h4>
                             <div class="de_form">
@@ -180,7 +180,7 @@
                                 <input type="range" class="range-max" min="0" max="2000" value="2000"
                                     step="1">
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="col-lg-9">
