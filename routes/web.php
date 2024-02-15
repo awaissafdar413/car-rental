@@ -47,7 +47,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard/{id}', [homecontroller::class,'dashboard'])->name('account-dashboard');
+    Route::get('/dashboard', [homecontroller::class,'dashboard'])->name('account-dashboard');
 
     Route::get('/profile/{id}', [homecontroller::class,'singleuser_dashboard'])->name('profile');
     Route::Post('/profile/{id}', [homecontroller::class,'singleuser_dashboard_update'])->name('profile');

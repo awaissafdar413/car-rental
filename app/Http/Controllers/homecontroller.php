@@ -13,11 +13,13 @@ class homecontroller extends Controller
         $types=DB::table('brand')->get();
         return view('car',compact('cars','types'));
     }
-    function dashboard($id){
+    function dashboard(){
+        $id=auth()->user()->id;
         $users=DB::table('users')->where('id',$id)->get();
         return view('account-dashboard',compact('users'));
     }
-    function singleuser_dashboard($id){
+    function singleuser_dashboard(){
+        $id=auth()->user()->id;
         $users=DB::table('users')->where('id',$id)->get();
         return view('account-profile',compact('users'));
     }
@@ -27,6 +29,7 @@ class homecontroller extends Controller
             'email'=> $request->email_address,
             'password'=> Hash::make($request->user_password),
         ]);
+
         return redirect()->back();
     }
 }

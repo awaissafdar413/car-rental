@@ -40,7 +40,7 @@
                                   @endif
                             </div>
                         </div>
-{{-- 
+
                         <div class="item_filter_group">
                             <h4>Car Body Type</h4>
                             <div class="de_form">
