@@ -10,6 +10,6 @@ class homecontroller extends Controller
     function car_show(){
         $cars=DB::table('vehicle')->get();
         $types=DB::table('brand')->get();
-        return view('car',compact('cars'));
+        return view('car',compact('cars','types'));
     }
 }

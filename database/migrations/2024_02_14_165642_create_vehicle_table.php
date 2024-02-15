@@ -20,7 +20,7 @@ return new class extends Migration
             $table->Integer('car_passenger');
             $table->Integer('car_gate');
             $table->Integer('car_rent');
-            // $table->foreign('car_type')->references('car_id')->on('brand');
+            $table->foreign('car_type')->references('car_id')->on('brand');
             $table->timestamps();
         });
     }
