@@ -63,7 +63,7 @@
                 {{ Auth::user()->name}}
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-black" href="{{ route('account-dashboard',Auth::user()->id) }}">
+                <a class="dropdown-item text-black" href="{{ route('account-dashboard')}}">
                     Dashboard
                 </a>
                 <a class="dropdown-item text-black" href="{{ route('logout') }}" onclick="event.preventDefault();
