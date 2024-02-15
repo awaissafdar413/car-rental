@@ -54,7 +54,7 @@
                             <div class="card padding40  rounded-5">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <form id="form-create-item" class="form-border" method="Post" action="{{ route('profile',Auth::user()->id) }}">
+                                        <form id="form-create-item" class="form-border" method="Post" action="{{ route('profile_update',Auth::user()->id) }}">
                                         <div class="de_tab tab_simple">
 
                                             <ul class="de_nav">

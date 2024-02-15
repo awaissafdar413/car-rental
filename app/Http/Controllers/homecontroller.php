@@ -11,6 +11,11 @@ class homecontroller extends Controller
     function car_show(){
         $cars=DB::table('vehicle')->get();
         $types=DB::table('brand')->get();
+
+        // $cars=DB::table('vehicle')
+        // ->join('brand','vehicle.car_type','=','car_id')
+        // ->get();
+// return ($cars);
         return view('car',compact('cars','types'));
     }
     function dashboard(){

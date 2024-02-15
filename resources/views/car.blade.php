@@ -27,17 +27,14 @@
                         <div class="item_filter_group">
                             <h4>Vehicle Type</h4>
                             <div class="de_form">
-                                @if ($types == '')
                                 @foreach ($types as $type)
                                 <div class="de_checkbox">
-                                  <input id="vehicle_type_1" name="vehicle_type_1" type="checkbox"
-                                      value="{{ $type->name }}">
-                                  <label for="{{ $type->name }}">Car</label>
+                                  <input id="{{ $type->brand_name }}" name="{{ $type->brand_name }}" type="checkbox"
+                                      value="{{ $type->brand_name }}">
+                                  <label for="{{ $type->brand_name }}">{{ $type->brand_name }}</label>
                               </div>
+
                               @endforeach
-                                  @else
-                                  <h4 class="text-white text-center"> No Car Registered</h4>
-                                  @endif
                             </div>
                         </div>
 
@@ -185,8 +182,7 @@
 
                     <div class="col-lg-9">
                         <div class="row">
-                            @if ($cars == '')
-                                @foreach ($cars as $car)
+                            @foreach ($cars as $car)
                                     <div class="col-xl-4 col-lg-6">
                                         <div class="de-item mb30">
                                             <div class="d-img">
@@ -216,12 +212,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
-                            @else
-                                <div class="col-12">
-                                    <h1 class="text-white text-center">No Cars Found</h1>
-                                </div>
-                            @endif
+
+
+                            @endforeach
                             {{-- <div class="col-xl-4 col-lg-6">
                             <div class="de-item mb30">
                                 <div class="d-img">

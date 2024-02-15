@@ -26,6 +26,7 @@ Route::get('/about', function () {
 // })->name('profile');
 
 Route::get('/car', [homecontroller::class,'car_show'])->name('car');
+Route::get('/test', [homecontroller::class,'car_show'])->name('car');
 
 Route::get('/booking', function () {
     return view('booking');
@@ -49,6 +50,6 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [homecontroller::class,'dashboard'])->name('account-dashboard');
 
-    Route::get('/profile/{id}', [homecontroller::class,'singleuser_dashboard'])->name('profile');
-    Route::Post('/profile/{id}', [homecontroller::class,'singleuser_dashboard_update'])->name('profile');
+    Route::get('/profile', [homecontroller::class,'singleuser_dashboard'])->name('profile');
+    Route::Post('/profile/{id}', [homecontroller::class,'singleuser_dashboard_update'])->name('profile_update');
 });
