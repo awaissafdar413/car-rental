@@ -76,9 +76,12 @@
                                     </li>
                                     <li><a class="menu-item" href="{{ route('car') }}">Cars</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('booking') }}">Booking</a></li>
-                                    <li><a class="menu-item" href="{{ route('account-dashboard') }}">My Account</a>
+                                    <li><a class="menu-item" href="{{ route('about') }}">about</a>
                                     </li>
+                                    <li><a class="menu-item" href="{{ route('booking') }}">Booking</a>
+                                    </li>
+                                    {{-- <li><a class="menu-item" href="{{ route('account-dashboard', Auth::user()->id) }}">My Account</a>
+                                    </li> --}}
                                 </ul>
                             </div>
                             <div class="de-flex-col">

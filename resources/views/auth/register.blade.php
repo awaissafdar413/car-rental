@@ -59,7 +59,7 @@
                                         @enderror
                                     </div>
                                     <div id="submit">
-                                        <input type="submit" id="send_message" value="Sign In"
+                                        <input type="submit" id="send_message" value="Sign Up"
                                             class="btn-main btn-fullwidth rounded-3" />
                                     </div>
 
@@ -71,11 +71,11 @@
                                     @endif
 
                                 </form>
-                                <div class="title-line">Or&nbsp;sign&nbsp;up&nbsp;with</div>
+                                <div class="title-line">Or&nbsp;sign&nbsp;In&nbsp;with</div>
                                 <div class="row g-2">
                                     <div class="mt-3" id="submit">
-                                        <a href="{{ route('register') }}" id="send_message"
-                                            class="btn-main btn-fullwidth rounded-3">Sign Up</a>
+                                        <a href="{{ route('login') }}" id="send_message"
+                                            class="btn-main btn-fullwidth rounded-3">Sign In</a>
                                     </div>
                                     <div class="col-lg-6">
                                         <a class="btn-sc btn-fullwidth mb10" href="#"><img

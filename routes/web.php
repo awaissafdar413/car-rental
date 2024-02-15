@@ -18,6 +18,13 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+// Route::get('/profile', function () {
+//     return view('account-profile');
+// })->name('profile');
+
 Route::get('/car', [homecontroller::class,'car_show'])->name('car');
 
 Route::get('/booking', function () {
@@ -40,7 +47,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('account-dashboard');
-    })->name('account-dashboard');
+    Route::get('/dashboard/{id}', [homecontroller::class,'dashboard'])->name('account-dashboard');
+
+    Route::get('/profile/{id}', [homecontroller::class,'singleuser_dashboard'])->name('profile');
+    Route::Post('/profile/{id}', [homecontroller::class,'singleuser_dashboard_update'])->name('profile');
 });
