@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicle', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('car_name');
             $table->string('car_review');
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->Integer('car_passenger');
             $table->Integer('car_gate');
             $table->Integer('car_rent');
-           
+
             // $table->foreign('car_type')->references('car_id')->on('brand');
             $table->timestamps();
         });

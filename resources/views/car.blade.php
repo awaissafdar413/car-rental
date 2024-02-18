@@ -27,6 +27,7 @@
                         <div class="item_filter_group">
                             <h4>Vehicle Type</h4>
                             <div class="de_form">
+                                <form action="{{route('car')}}" method="get">
                                 @foreach ($types as $type)
                                 <div class="de_checkbox">
                                   <input id="{{ $type->brand_name }}" name="{{ $type->brand_name }}" type="checkbox"
@@ -35,10 +36,16 @@
                               </div>
 
                               @endforeach
+                              <div class="de_checkbox">
+                                <input id="submit"   type="submit" class="btn-main"
+                                    value="Apply Filter">
+                                {{-- <label for="{{ $type->brand_name }}">{{ $type->brand_name }}</label> --}}
+                            </div>
+                            </form>
                             </div>
                         </div>
 
-                        <div class="item_filter_group">
+                        {{-- <div class="item_filter_group">
                             <h4>Car Body Type</h4>
                             <div class="de_form">
                                 <div class="de_checkbox">

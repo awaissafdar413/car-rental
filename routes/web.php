@@ -26,7 +26,7 @@ Route::get('/about', function () {
 // })->name('profile');
 
 Route::get('/car', [homecontroller::class,'car_show'])->name('car');
-Route::get('/test', [homecontroller::class,'car_show'])->name('car');
+// Route::get('/test', [homecontroller::class,'car_show'])->name('car');
 
 Route::get('/booking', function () {
     return view('booking');

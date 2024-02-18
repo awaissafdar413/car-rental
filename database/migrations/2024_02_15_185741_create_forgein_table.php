@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('vehicle', function (Blueprint $table) {
+        Schema::table('vehicles', function (Blueprint $table) {
 
             $table->foreign('car_type')
             ->references('car_id')
-            ->on('brand')
+            ->on('brands')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-          
+
         });
     }
 

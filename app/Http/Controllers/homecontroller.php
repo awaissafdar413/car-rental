@@ -9,13 +9,12 @@ use Illuminate\Support\Facades\Hash;
 class homecontroller extends Controller
 {
     function car_show(){
-        $cars=DB::table('vehicle')->get();
-        $types=DB::table('brand')->get();
 
-        // $cars=DB::table('vehicle')
-        // ->join('brand','vehicle.car_type','=','car_id')
-        // ->get();
-// return ($cars);
+        $cars=DB::table('vehicles')->get();
+        $types=DB::table('brands')->get();
+        $cars=DB::table('vehicles')
+        ->join('brands','vehicles.car_type','=','car_id')
+        ->get();
         return view('car',compact('cars','types'));
     }
     function dashboard(){
