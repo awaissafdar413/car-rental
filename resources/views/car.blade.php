@@ -27,21 +27,16 @@
                         <div class="item_filter_group">
                             <h4>Vehicle Type</h4>
                             <div class="de_form">
-                                <form action="{{route('car')}}" method="get">
                                 @foreach ($types as $type)
-                                <div class="de_checkbox">
-                                  <input id="{{ $type->brand_name }}" name="{{ $type->brand_name }}" type="checkbox"
-                                      value="{{ $type->brand_name }}">
-                                  <label for="{{ $type->brand_name }}">{{ $type->brand_name }}</label>
-                              </div>
+                                    <div class="de_checkbox">
+                                        <input id="{{ $type->brand_id }}"
+                                            @if (in_array($type->brand_id, explode(',', $q_brands))) checked="checked" @endif name="brands"
+                                            type="checkbox" value="{{ $type->brand_id }}"
+                                            onchange="filterByBrand(this)">
+                                        <label for="{{ $type->brand_id }}">{{ $type->brand_name }}</label>
+                                    </div>
+                                @endforeach
 
-                              @endforeach
-                              <div class="de_checkbox">
-                                <input id="submit"   type="submit" class="btn-main"
-                                    value="Apply Filter">
-                                {{-- <label for="{{ $type->brand_name }}">{{ $type->brand_name }}</label> --}}
-                            </div>
-                            </form>
                             </div>
                         </div>
 
@@ -190,37 +185,36 @@
                     <div class="col-lg-9">
                         <div class="row">
                             @foreach ($cars as $car)
-                                    <div class="col-xl-4 col-lg-6">
-                                        <div class="de-item mb30">
-                                            <div class="d-img">
-                                                <img src="{{ $car->car_image }}" class="img-fluid" alt="">
-                                            </div>
-                                            <div class="d-info">
-                                                <div class="d-text">
-                                                    <h4>{{ $car->car_name }}</h4>
-                                                    <div class="d-item_like">
-                                                        <i class="fa fa-heart"></i><span>{{ $car->car_review }}</span>
-                                                    </div>
-                                                    <div class="d-atr-group">
-                                                        <span class="d-atr"><img src="images/icons/1-green.svg"
-                                                                alt="">{{ $car->car_passenger }}</span>
-                                                        {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
+                                <div class="col-xl-4 col-lg-6">
+                                    <div class="de-item mb30">
+                                        <div class="d-img">
+                                            <img src="{{ $car->car_image }}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="d-info">
+                                            <div class="d-text">
+                                                <h4>{{ $car->car_name }}</h4>
+                                                <div class="d-item_like">
+                                                    <i class="fa fa-heart"></i><span>{{ $car->car_review }}</span>
+                                                </div>
+                                                <div class="d-atr-group">
+                                                    <span class="d-atr"><img src="images/icons/1-green.svg"
+                                                            alt="">{{ $car->car_passenger }}</span>
+                                                    {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
                                             --}}
-                                                        <span class="d-atr"><img src="images/icons/3-green.svg"
-                                                                alt="">{{ $car->car_gate }}</span>
-                                                        <span class="d-atr"><img src="images/icons/4-green.svg"
-                                                                alt="">{{ $car->car_type }}</span>
-                                                    </div>
-                                                    <div class="d-price">
-                                                        Daily rate from <span>${{ $car->car_rent }}</span>
-                                                        <a class="btn-main" href="car-single.html">Rent Now</a>
-                                                    </div>
+                                                    <span class="d-atr"><img src="images/icons/3-green.svg"
+                                                            alt="">{{ $car->car_gate }}</span>
+                                                    <span class="d-atr"><img src="images/icons/4-green.svg"
+                                                            alt="">{{ $car->car_type }}</span>
+                                                    <span class="d-atr">{{ $car->brand_name }}</span>
+                                                </div>
+                                                <div class="d-price">
+                                                    Daily rate from <span>${{ $car->car_rent }}</span>
+                                                    <a class="btn-main" href="car-single.html">Rent Now</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-
+                                </div>
                             @endforeach
                             {{-- <div class="col-xl-4 col-lg-6">
                             <div class="de-item mb30">
@@ -524,6 +518,25 @@
 
 
     </div>
+    <form id="frmfilter" method="get">
+        <input type="hidden" id="brands" name="brands" value="{{ $q_brands }}" />
+    </form>
     <!-- content close -->
+    @push('script')
+    <script>
+        function filterByBrand(brand) {
+            var brands = "";
+            $("input[name='brands']:checked").each(function() {
+                if (brands == "") {
+                    brands += this.value;
+                } else {
+                    brands += "," + this.value;
+                }
+            });
+            $("#brands").val(brands);
+            $("#frmFilter").submit();
+        }
+        </script>
+@endpush
 
 @endsection

@@ -185,11 +185,9 @@
     ================================================== -->
     <script src="{{ asset('js/plugins.js') }}"></script>
     <script src="{{ asset("js/designesia.js") }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgiM7ogCAA2Y5pgSk2KXZfxF5S_1jsptA&amp;libraries=places&amp;callback=initPlaces" async="" defer=""></script>
+    @stack('script')
 
 </body>
 
-
-<!-- Mirrored from www.madebydesignesia.com/themes/rentaly/{{ route('home') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Feb 2024 12:00:27 GMT -->
 </html>
 
