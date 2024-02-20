@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', [homecontroller::class,'car_show_home'])->name('home');
 
 Route::get('/about', function () {
     return view('about');

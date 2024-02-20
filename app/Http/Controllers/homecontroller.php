@@ -5,53 +5,27 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\models\vehicle;
+use App\models\brand;
 use Illuminate\Support\Facades\Hash;
 
 class homecontroller extends Controller
 {
     function car_show(request $request){
-
-        // $cars=DB::table('vehicles')->get();
-        $types=DB::table('brands')->get();
-        $cars=DB::table('vehicles')
-        ->join('brands','vehicles.car_type','=','brand_id')
-        ->orderBy('car_type','ASC')
-        ->get();
-        $q_brands=$request->query('brands');
-        $brand_name=$request->brands;
-        if($brand_name== " ")
+        $types = brand::get();
+        $query = vehicle::query();
+        if($request->ajax())
         {
-            $cars=DB::table('vehicles')
-            ->join('brands','vehicles.car_type','=','brand_id')
-            ->orderBy('car_type','ASC')
-            ->where('brand_id',$brand_name)
-            ->get();
-
+            $cars = $query->where(['brand_id'=>$request->category])->get();
+            return response()->json(['products'=>$cars]);
         }
-        else {
-            $cars=DB::table('vehicles')
-            ->join('brands','vehicles.car_type','=','brand_id')
-            ->orderBy('car_type','ASC')
-            ->get();
-        }
-        // dd($brand_name);
-
-
-        // if ($q_brands ==null) {
-        //     $cars=DB::table('vehicles')
-        //     ->join('brands','vehicles.car_type','=','brand_id')
-        //     ->get();
-        // }
-        // else{
-        // $cars=DB::table('vehicle')
-        // ->join('brands','vehicles.car_type','=','brand_id')
-        // ->where(function($query) use($q_brands){
-        //     $query->whereIn('brand_id',explode(',',$q_brands))->orWhereRaw("'".$q_brands."'=' '");
-        // });}
-        // dd($cars);
-        // dd('brands');
-        // $cars=DB::table('vehicle')->get();
-        return view('car',compact('cars','types','q_brands'));
+        $cars = $query->get();
+        return view('car',compact('cars','types'));
+    }
+    function car_show_home(request $request){
+        $types = brand::get();
+        $query = vehicle::query();
+        $cars = $query->get();
+        return view('index',compact('cars','types'));
     }
     function dashboard(){
         $id=auth()->user()->id;
