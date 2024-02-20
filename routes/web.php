@@ -15,15 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [homecontroller::class,'car_show_home'])->name('home');
-
+Route::fallback(function () {
+    return view('404');
+});
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+Route::get('/addblog', function () {
+    return view('admin.addblog');
+})->name('addblog');
 // Route::get('/profile', function () {
 //     return view('account-profile');
 // })->name('profile');
 
 Route::get('/car', [homecontroller::class,'car_show'])->name('car');
+Route::get('/blog', [homecontroller::class,'blog_show'])->name('blog');
 // Route::get('/test', [homecontroller::class,'car_show'])->name('car');
 
 Route::get('/booking', function () {

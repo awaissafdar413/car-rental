@@ -27,6 +27,9 @@ class homecontroller extends Controller
         $cars = $query->get();
         return view('index',compact('cars','types'));
     }
+    function blog_show(request $request){
+        return view('blog');
+    }
     function dashboard(){
         $id=auth()->user()->id;
         $users=DB::table('users')->where('id',$id)->get();
