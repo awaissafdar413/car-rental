@@ -1,81 +1,44 @@
+
+
+
 <div>
-    {{-- <div class="menu_side_area">
-        <a href="{{ route('login') }}" class="btn-main">Sign In</a>
-        <span id="menu-btn"></span>
-    </div> --}}
-
-    {{-- <ul class="navbar-nav ms-auto">
-        <!-- Authentication Links -->
-        @guest
-        @if (Route::has('login'))
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-        </li>
-        @endif
-
-        @if (Route::has('register'))
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-        </li>
-        @endif
-        @else
-        <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
-            </a>
-
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </div>
-        </li>
-        @endguest
-    </ul> --}}
-
-    <div class="container">
-
-        <!-- Authentication Links -->
-        @guest
-        <div class="d-flex">
-            @if (Route::has('login'))
-            <li class="nav-item">
-                <a class="nav-link btn-main" href="{{ route('login') }}">{{ __('Login') }}</a>
+    <div class="dropdown">
+        <button class="btn btn-main dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @auth <span>{{ Auth::user()->name }}</span>
+            @else
+            <span>Guest</span>
+            @endauth <i data-feather="user"></i>
+        </button>
+        <ul class="dropdown-menu">
+            @if(Route::has('login'))
+            @auth
+            @if(Auth::user()->utype === 'ADM')
+            <li>
+                <a class="dropdown-item" href="{{route('admin.dashboard')}}" class="d-block">Dashboard</a>
+            </li>
+            @else
+            <li>
+                <a class="dropdown-item" href="{{route('user.dashboard')}}" class="d-block">My Account</a>
             </li>
             @endif
-
-            @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link btn-main" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-            @endif
-        </div>
-        @else
-        <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name}}
-            </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-black" href="{{ route('account-dashboard')}}">
-                    Dashboard
-                </a>
-                <a class="dropdown-item text-black" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            <li>
+                <a class="dropdown-item" href="{{route('logout')}}"
+                    onclick="event.preventDefault();document.getElementById('frmlogout').submit();"
+                    class="d-block">Logout</a>
+                <form id="frmlogout" action="{{route('logout')}}" method="POST">
                     @csrf
                 </form>
-            </div>
-        </li>
-        @endguest
+            </li>
+            @else
+            <li>
+                <a class="dropdown-item" href="{{route('login')}}" class="d-block">Login</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{{route('register')}}" class="d-block">Register</a>
+            </li>
+            @endauth
+            @endif
+        </ul>
     </div>
+
 </div>

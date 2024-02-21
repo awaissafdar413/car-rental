@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 use App\Models\vehicle;
-use App\Models\user;
 // use App\Models\vehicle;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;

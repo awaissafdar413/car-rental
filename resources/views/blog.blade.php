@@ -39,9 +39,9 @@
                                 <img alt="" src="images/news/pic-blog-1.jpg" class="lazy">
                             </div>
                             <div class="post-text">
-                                <h4><a href="{{ route('blog-single',{{ $blog->id }}) }}">{{ $blog->title }}<span></span></a></h4>
+                                <h4><a href="{{ route('blog-single',$blog->id) }}">{{ $blog->title }}<span></span></a></h4>
                                 <p>{{$blog->description}}</p>
-                                <a class="btn-main" href="{{ route('blog-single',{{ $blog->id }}) }}">Read More</a>
+                                <a class="btn-main" href="{{ route('blog-single',$blog->id ) }}">Read More</a>
                             </div>
                         </div>
                     </div>

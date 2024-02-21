@@ -1,6 +1,9 @@
 <?php
 
-use App\Http\Controllers\homecontroller;
+use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\mainhomecontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,34 +16,36 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::group(['prefix'=>'admin'],function(){
-    Route::group(['middleware'=>'admin.guest'],function(){
 
-    });
-    Route::group(['middleware'=>'admin.auth'],function(){
+Route::get('/', function () {
+    return view('welcome');
+});
 
-    });
+Auth::routes();
 
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [mainhomecontroller::class,'dashboard'])->name('user.dashboard');
+    Route::get('/profile', [mainhomecontroller::class,'singleuser_dashboard'])->name('profile');
+    Route::Post('/profile/{id}', [mainhomecontroller::class,'singleuser_dashboard_update'])->name('profile_update');
+});
+
+Route::middleware(['auth','auth.admin'])->group(function () {
+    Route::get('/Admin-panel',[AdminController::class,'blog_show'])->name('admin.dashboard');
 });
 
 
-Route::get('/', [homecontroller::class,'car_show_home'])->name('home');
+
+
+Route::get('/', [mainhomecontroller::class,'car_show_home'])->name('home');
 Route::fallback(function () {
     return view('404');
 });
 Route::get('/about', function () {
     return view('about');
 })->name('about');
-Route::get('/addblog', function () {
-    return view('admin.addblog');
-})->name('addblog');
-// Route::get('/profile', function () {
-//     return view('account-profile');
-// })->name('profile');
 
-Route::get('/car', [homecontroller::class,'car_show'])->name('car');
-Route::get('/blog', [homecontroller::class,'blog_show'])->name('blog');
-// Route::get('/test', [homecontroller::class,'car_show'])->name('car');
+Route::get('/car', [mainhomecontroller::class,'car_show'])->name('car');
+Route::get('/blog', [mainhomecontroller::class,'blog_show'])->name('blog');
 
 Route::get('/booking', function () {
     return view('booking');
@@ -52,19 +57,4 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
-// Route::get('/account-dashboard', function () {
-//     return view('account-dashboard');
-// })->name('account-dashboard');
-
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', [homecontroller::class,'dashboard'])->name('account-dashboard');
-
-    Route::get('/profile', [homecontroller::class,'singleuser_dashboard'])->name('profile');
-    Route::Post('/profile/{id}', [homecontroller::class,'singleuser_dashboard_update'])->name('profile_update');
-});
 

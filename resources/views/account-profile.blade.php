@@ -41,11 +41,11 @@
                                 @endforeach
                                 <div class="spacer-20"></div>
                                 <ul class="menu-col">
-                                    <li><a href="{{ route('account-dashboard',Auth::user()->id) }}" ><i class="fa fa-home"></i>Dashboard</a></li>
-                                    <li><a class="active" href="{{ route('profile',   Auth::user()->id) }}"><i class="fa fa-user"></i>My Profile</a></li>
+                                    <li><a href="{{ route('user.dashboard') }}" ><i class="fa fa-home"></i>Dashboard</a></li>
+                                    <li><a class="active" href="{{ route('profile') }}"><i class="fa fa-user"></i>My Profile</a></li>
                                     <li><a href="account-booking.html"><i class="fa fa-calendar"></i>My Orders</a></li>
                                     <li><a href="account-favorite.html"><i class="fa fa-car"></i>My Favorite Cars</a></li>
-                                    <li><a href="login.html"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+                                    <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i>Sign Out</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
-
-<!-- Mirrored from www.madebydesignesia.com/themes/rentaly/{{ route('home') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Feb 2024 12:00:06 GMT -->
 <head>
     <title>Rentaly </title>
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">

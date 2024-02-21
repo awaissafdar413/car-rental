@@ -1,7 +1,7 @@
 
 
 @extends('layout.app')
-@section('slot')
+@section('content')
     <!-- header close -->
     <!-- content begin -->
     <div class="no-bottom no-top" id="content">

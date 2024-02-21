@@ -41,7 +41,7 @@
                                 @endforeach
                                 <div class="spacer-20"></div>
                                 <ul class="menu-col">
-                                    <li><a href="{{ route('account-dashboard') }}" class="active"><i class="fa fa-home"></i>Dashboard</a></li>
+                                    <li><a href="{{ route('user.dashboard') }}" class="active"><i class="fa fa-home"></i>Dashboard</a></li>
                                     <li><a href="{{ route('profile') }}"><i class="fa fa-user"></i>My Profile</a></li>
                                     <li><a href="account-booking.html"><i class="fa fa-calendar"></i>My Orders</a></li>
                                     <li><a href="account-favorite.html"><i class="fa fa-car"></i>My Favorite Cars</a></li>
