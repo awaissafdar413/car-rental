@@ -34,7 +34,7 @@ class homecontroller extends Controller
         $id=auth()->user()->id;
         $users=DB::table('users')->where('id',$id)->get();
         return view('account-dashboard',compact('users'));
-    }
+    } 
     function singleuser_dashboard(){
         $id=auth()->user()->id;
         $users=DB::table('users')->where('id',$id)->get();
