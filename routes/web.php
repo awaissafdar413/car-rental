@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['middleware'=>'admin.guest'],function(){
+
+    });
+    Route::group(['middleware'=>'admin.auth'],function(){
+
+    });
+
+});
+
 
 Route::get('/', [homecontroller::class,'car_show_home'])->name('home');
 Route::fallback(function () {
@@ -57,3 +67,4 @@ Route::middleware([
     Route::get('/profile', [homecontroller::class,'singleuser_dashboard'])->name('profile');
     Route::Post('/profile/{id}', [homecontroller::class,'singleuser_dashboard_update'])->name('profile_update');
 });
+
