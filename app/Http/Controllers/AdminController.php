@@ -37,14 +37,15 @@ public function add_blog_show(){
     return view('admin.addblog');
 }
    public function blog_delete($id){
-    $student = new blog;
-    $stud=$student->find($id);
-    $stud->delete();
+    // $student = new blog;
+    // $stud=$student->where('id',$id);
+    // $stud->delete();
+    $data=blog::where('id',$id)->delete();
     return redirect()->back();
    }
    public function blog_update($id){
     $student = new blog;
-    $stud = $student->find($id);
+    $stud = $student->where('id',$id);
     $datas=$stud->get();
     return view('admin.update',compact('datas'));
    }
@@ -60,7 +61,7 @@ public function add_blog_show(){
 
     //images
     $id=$request->input('id');
-    $blog= blog::find($id);
+    $blog= blog::where('id',$id);
     $blog->title=$request->input('title');
     $blog->keyword=$request->input('keyword');
     $blog->slug=$request->input('slug');

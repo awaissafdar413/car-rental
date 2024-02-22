@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\models\vehicle;
 use App\models\blog;
 use App\models\brand;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class mainhomecontroller extends Controller
@@ -35,12 +36,14 @@ class mainhomecontroller extends Controller
 
     function dashboard(){
         $id=auth()->user()->id;
-        $users=DB::table('users')->where('id',$id)->get();
+        // $users=DB::table('users')->where('id',$id)->get();
+        $users=user::where('id',$id)->get();
         return view('account-dashboard',compact('users'));
     }
     function singleuser_dashboard(){
         $id=auth()->user()->id;
-        $users=DB::table('users')->where('id',$id)->get();
+        // $users=DB::table('users')->where('id',$id)->get();
+        $users=User::where('id',$id)->get();
         return view('account-profile',compact('users'));
     }
     function singleuser_dashboard_update($id,request $request){
