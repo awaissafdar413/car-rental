@@ -10,7 +10,9 @@
     <meta content="" name="author">
     <!-- CSS Files
     ================================================== -->
+    @stack('style')
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="{{ asset('admin/css/main.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet" type="text/css" id="mdb">
     <link href="{{ asset('css/plugins.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
@@ -126,7 +128,7 @@
                                 <div class="widget">
                                     <ul>
                                         <li><a href="#">About</a></li>
-                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="{{ route('blog') }}">Blog</a></li>
                                         <li><a href="#">Careers</a></li>
                                         <li><a href="#">News</a></li>
                                         <li><a href="#">Partners</a></li>

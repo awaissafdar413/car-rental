@@ -33,6 +33,11 @@ class mainhomecontroller extends Controller
         $blogs=blog::all();
         return view('blog',compact('blogs'));
     }
+    function blog_single($slug){
+        $blogs=blog::where('slug',$slug)->get();
+        dd($blogs);
+        return view('blog-single',compact('blogs'));
+    }
 
     function dashboard(){
         $id=auth()->user()->id;

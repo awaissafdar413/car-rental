@@ -51,6 +51,7 @@ Route::get('/about', function () {
 
 Route::get('/car', [mainhomecontroller::class,'car_show'])->name('car');
 Route::get('/blog', [mainhomecontroller::class,'blog_show'])->name('blog');
+Route::get('/blog/{slug}', [mainhomecontroller::class,'blog_single'])->name('blog-single');
 
 Route::get('/booking', function () {
     return view('booking');

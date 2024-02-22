@@ -397,10 +397,6 @@ input {
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .15)
 }
 
-.card-1 .card-heading {
-    background: url("../images/bg-head-02.jpg") center center/cover no-repeat;
-    padding-top: 210px
-}
 
 .card-1 .card-body {
     padding: 0 90px;

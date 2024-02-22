@@ -23,6 +23,10 @@ class AdminController extends Controller
 
     //images
     $blog= new blog;
+    $old_slug=$request->slug;
+
+$final_slug = str_replace(' ', '_',$old_slug);
+$slug = strtolower($final_slug);
     $blog->title=$request->input('title');
     $blog->keyword=$request->input('keyword');
     $blog->slug=$request->input('slug');
@@ -50,6 +54,8 @@ public function add_blog_show(){
     return view('admin.update',compact('datas'));
    }
    public function blog_update_post(request $request){
+    $path= "";
+    $filename = "";
     if($request->has('image')){
         $file = $request->file('image');
         $extension= $file->getClientOriginalExtension();
@@ -58,18 +64,22 @@ public function add_blog_show(){
         $file->move($path, $filename);
     }
 
+//create slug
+$old_slug=$request->slug;
 
+$slug = str_replace(' ', '_',$old_slug);
     //images
     $id=$request->input('id');
-    $blog= blog::where('id',$id);
+    // $blog= blog::where('id',$id);
+    $blog= blog::find($id);
     $blog->title=$request->input('title');
     $blog->keyword=$request->input('keyword');
-    $blog->slug=$request->input('slug');
+    $blog->slug=$slug;
     $blog->description=$request->input('description');
     $blog->blog=$request->input('content');
     $blog->featuredimage=$path.$filename;
+
     $blog->update();
     return redirect('/Admin-panel');
-   }
-}
+   }}
 
