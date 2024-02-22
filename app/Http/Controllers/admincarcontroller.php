@@ -8,12 +8,17 @@ use Illuminate\Http\Request;
 
 class admincarcontroller extends Controller
 {
+   public function all_car_show()
+   {
+    $datas=vehicle::all();
+    return view("admin-car.dashboard",compact("datas"));
+   }
    public function addcar_show()
    {
     $cars=brand::all();
     return view("admin-car.addcar",compact("cars"));
    }
-   public function blog_add(request $request){
+   public function add_car(request $request){
     if($request->has('image')){
         $file = $request->file('image');
         $extension= $file->getClientOriginalExtension();
