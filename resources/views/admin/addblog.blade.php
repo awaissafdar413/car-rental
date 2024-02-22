@@ -14,7 +14,7 @@
     <link href="{{asset('admin/vendor/datepicker/daterangepicker.css')}}" rel="stylesheet" media="all">
 
     <link href="{{ asset('admin/css/main.css') }}" rel="stylesheet" media="all">
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('ckeditor/ckeditor/ckeditor.js') }}"></script>
     <meta name="robots" content="noindex, follow">
 </head>
 
@@ -30,7 +30,7 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">SEO Form</h2>
-                    <form method="POST" action="#" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.addblog') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="Enter Title" name="title">
@@ -43,17 +43,16 @@
                                 name="description">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Enter OGI link" name="ogilink">
+                            <input class="input--style-1" type="text" placeholder="Enter Slug"
+                                name="slug">
                         </div>
-                        <div class="input-group">
-                            <label>Featured Image</label>
-                            <input class="input--style-1" type="file" placeholder="Enter OGI image" name="ogiimage">
-                        </div>
+
+
 
                         <div class="input-group">
                             <label>Featured Image</label>
-                            <input class="input--style-1" type="file" placeholder="Enter OGI image" name="ogiimage">
-                
+                            <input class="input--style-1" type="file" placeholder="Enter OGI image" name="image">
+
                         </div>
                         <div class="input-group">
                             <textarea class="form-control" id="content" placeholder="Enter the Description" rows="5"
@@ -76,10 +75,10 @@
     <script src="{{asset('admin/vendor/datepicker/daterangepicker.js')}}"></script>
     <script>
         CKEDITOR.replace('content');
-       ClassicEditor.create(document.querySelector('#content'))
-        .catch(error => {
-           console.error(error);
-          });
+    //    ClassicEditor.create(document.querySelector('#content'))
+    //     .catch(error => {
+    //        console.error(error);
+    //       });
     </script>
     <script src="{{asset('admin/js/global.js')}}"></script>
 </body>

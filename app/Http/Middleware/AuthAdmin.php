@@ -16,7 +16,7 @@ class AuthAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->type != "ADM")
+        if(Auth::user()->utype != "ADM")
         {
             session()->flush();
             return redirect()->route('login');

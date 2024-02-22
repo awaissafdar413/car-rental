@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('keyword');
+            $table->string('slug');
             $table->string('description');
             $table->string('featuredimage');
             $table->string('blog');

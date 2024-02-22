@@ -31,6 +31,11 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth','auth.admin'])->group(function () {
     Route::get('/Admin-panel',[AdminController::class,'blog_show'])->name('admin.dashboard');
+    Route::get('/Add-blog',[AdminController::class,'add_blog_show'])->name('add_blog_admin');
+    Route::Post('/Add',[AdminController::class,'blog_add'])->name('admin.addblog');
+    Route::Post('deleted/{id}',[AdminController::class,'blog_delete'])->name('admin.delete');
+    Route::get('update/{id}',[AdminController::class,'blog_update'])->name('admin.update');
+    Route::POST('update',[AdminController::class,'blog_update_post'])->name('blog.update');
 });
 
 

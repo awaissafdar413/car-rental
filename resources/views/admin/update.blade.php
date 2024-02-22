@@ -37,6 +37,9 @@
                             <input class="input--style-1" type="text" placeholder="Enter Title" value="{{ $data->title }}" name="title">
                         </div>
                         <div class="input-group">
+                            <input class="input--style-1" type="hidden" placeholder="Enter Title" value="{{ $data->id }}" name="id">
+                        </div>
+                        <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="Enter Keyword" value="{{ $data->keyword }}" name="keyword">
                         </div>
                         <div class="input-group">

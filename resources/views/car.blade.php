@@ -27,11 +27,11 @@
                     <div class="item_filter_group">
                         <h4>Vehicle Type</h4>
                         <div class="de_form">
-                            <select id="category" id="category">
-                                <option value="">Select Brand</option>
+                            <select class="btn-main fs-5" id="category" id="category">
+                                <option value="" class="bg-dark">Select Brand</option>
                                 @foreach ($types as $type)
                                 <div class="de_checkbox">
-                                   <option value="{{ $type->brand_id }}">{{ $type->brand_name }}</option>
+                                   <option value="{{ $type->brand_id }}" class="bg-dark">{{ $type->brand_name }}</option>
                                 </div>
                                 @endforeach
                             </select>

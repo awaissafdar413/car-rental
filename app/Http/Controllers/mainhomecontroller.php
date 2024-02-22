@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\models\vehicle;
+use App\models\blog;
 use App\models\brand;
 use Illuminate\Support\Facades\Hash;
 
@@ -27,7 +28,11 @@ class mainhomecontroller extends Controller
         $cars = $query->get();
         return view('index',compact('cars','types'));
     }
-  
+    function blog_show(request $request){
+        $blogs=blog::all();
+        return view('blog',compact('blogs'));
+    }
+
     function dashboard(){
         $id=auth()->user()->id;
         $users=DB::table('users')->where('id',$id)->get();

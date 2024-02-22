@@ -12,6 +12,7 @@ class blog extends Model
         'title',
         'keyword',
         'description',
+        'slug',
         'featuredimage',
         'blog',
         'created_at',

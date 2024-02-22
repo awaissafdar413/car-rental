@@ -30,6 +30,7 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Add Blog</h2>
+                    <a href="{{ route('add_blog_admin') }}" class="btn btn-lg">Add Blog</a>
                     <table class="table table-striped table-light">
                         <tr>
                             <th>id</th>
@@ -44,8 +45,8 @@
                             <td>{{ $data->title }}</td>
                             <td>{{ $data->keyword }}</td>
                             <td>{{ $data->slug }}</td>
-                            <td><a href="{{ route('blog.show',$data->slug) }}" class="btn btn-danger btn-sm">Update</a></td>
-                            <td><a href="{{ route('deleteblog',$data->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                            <td><a href="{{ route('admin.update',$data->id) }}" class="btn btn-danger btn-sm">Update</a></td>
+                            <td><a href="{{ url('deleted/'.$data->id) }}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                         @endforeach
