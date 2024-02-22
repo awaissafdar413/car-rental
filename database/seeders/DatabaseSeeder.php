@@ -28,6 +28,5 @@ class DatabaseSeeder extends Seeder
             userSeeder::class
         ]);
 
-        vehicle::factory()->count(20)->create();
     }
 }
