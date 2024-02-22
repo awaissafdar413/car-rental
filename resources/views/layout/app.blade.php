@@ -62,8 +62,8 @@
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="{{ route('home') }}">
-                                            <img class="logo-1" src="images/logo-light.png" alt="">
-                                            <img class="logo-2" src="images/logo-light.png" alt="">
+                                            <img class="logo-1" src="./images/logo-light.png" >
+                                            <img class="logo-2" src="./images/logo-light.png" >
                                         </a>
                                     </div>
                                     <!-- logo close -->
@@ -79,12 +79,20 @@
                                     </li>
                                     <li><a class="menu-item" href="{{ route('booking') }}">Booking</a>
                                     </li>
+                                    <li id="admin-social">
+                                        @include('components.button_login')
+                                    </li>
                                     {{-- <li><a class="menu-item" href="{{ route('account-dashboard', Auth::user()->id) }}">My Account</a>
                                     </li> --}}
                                 </ul>
                             </div>
+
                             <div class="de-flex-col">
-                               @include('components.button_login')
+                                <div class="menu_side_area" style="background-size: 100%; background-repeat: no-repeat;">
+                                    @include('components.button_login')
+                                    <span id="menu-btn"></span>
+                                </div>
+
                             </div>
                         </div>
                     </div>

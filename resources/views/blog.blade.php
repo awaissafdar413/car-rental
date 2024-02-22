@@ -32,7 +32,7 @@
                     <div class="bloglist s2 item">
                         <div class="post-content">
                             <div class="post-image">
-                                <div class="date-box">
+                                <div class="date-box" style="background: transparent !important">
                                     <div class="m">{{ $blog->created_at->diffForHumans()}}</div>
                                     {{-- <div class="d">MAR</div> --}}
                                 </div>

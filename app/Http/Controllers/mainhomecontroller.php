@@ -35,7 +35,7 @@ class mainhomecontroller extends Controller
     }
     function blog_single($slug){
         $blogs=blog::where('slug',$slug)->get();
-        dd($blogs);
+        // dd($blogs);
         return view('blog-single',compact('blogs'));
     }
 

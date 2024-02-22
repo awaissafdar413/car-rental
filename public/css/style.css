@@ -517,7 +517,7 @@ header .header-col.mid .social-icons {
 #subheader {
     text-align: center;
     overflow: hidden;
-    padding: 50px 0 100px 0;
+    padding: 75px 0 100px 0;
     position: relative;
 }
 
@@ -676,7 +676,7 @@ header .header-col.mid .social-icons {
     color:#ffffff;
 }
 
-.rtl #mainmenu li.has-child:after {x
+.rtl #mainmenu li.has-child:after {
     position: absolute;
     left: 25px;
 }
@@ -788,7 +788,7 @@ header.header-light #mainmenu a{
 
 #mainmenu li li a:hover,
 #mainmenu ul li:hover>a {
-    color: #fff;
+    color: #000;
 }
 
 #mainmenu li ul {
@@ -5820,7 +5820,6 @@ i.font60 {
 
 .ul-style-4 li {
     margin: 2px 0 2px 0;
-    display: ;
     font-weight: 500;
 }
 
@@ -6361,7 +6360,7 @@ header.smaller{
 }
 
 .pricing-s2.text-light .top .price,
-.pricing-s2.text-white .top .price, {
+.pricing-s2.text-white .top .price {
     color: #ffffff;
 }
 
@@ -11235,8 +11234,7 @@ a.img-icon-zoom {
     width: 100%;
 }
 
-margin:5px;
-}
+
 
 /* clear fix */
 .grid:after {
@@ -11478,7 +11476,7 @@ margin:5px;
     border-color: #555;
 }
 
-.widget_tags li a:hover border-color: #eceff3;
+.widget_tags li a:hover{ border-color: #eceff3;
 }
 
 footer .widget {
@@ -17087,7 +17085,7 @@ a.btn-slider:hover {
     margin: 0 6px;
     display: inline-block;
     zoom: 1;
-    *display: inline;
+    display: inline;
 }
 
 .testi-slider .flex-control-paging li a {
@@ -17415,7 +17413,9 @@ img {
         transform: rotate(360deg);
     }
 }
-
+#admin-social{
+    display: none !important;
+}
 /* ================================================== */
 
 
@@ -17484,11 +17484,16 @@ img {
     header .logo-mobile{
         display: block;
     }
-
+    #admin-social{
+        align-items: end;
+        display: flex !important;
+    }
     header .logo-1{
         display: none;
     }
-
+    #admin-social{
+        display: flex !important;
+    }
     .de-submenu{
         position: fixed;
     }
@@ -18032,7 +18037,7 @@ img {
 
     header.header-mobile #mainmenu li ul {
         height: 0;
-        overflow: hidden;
+        /* overflow: hidden; */
         position: relative;
         left: 0;
     }

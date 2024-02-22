@@ -18,6 +18,7 @@ class AdminController extends Controller
         $filename= time().'.'.$extension;
         $path='upload/blog/';
         $file->move($path, $filename);
+
     }
 
 
@@ -62,6 +63,7 @@ public function add_blog_show(){
         $filename= time().'.'.$extension;
         $path='upload/blog/';
         $file->move($path, $filename);
+
     }
 
 //create slug
@@ -80,6 +82,7 @@ $slug = str_replace(' ', '_',$old_slug);
     $blog->featuredimage=$path.$filename;
 
     $blog->update();
+    // dd($blog);
     return redirect('/Admin-panel');
    }}
 

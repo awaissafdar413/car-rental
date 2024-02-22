@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\mainhomecontroller;
+use App\Http\Controllers\admincarcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,12 +31,19 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth','auth.admin'])->group(function () {
-    Route::get('/Admin-panel',[AdminController::class,'blog_show'])->name('admin.dashboard');
+    Route::get('/Admin-panel',[AdminController::class,'blog_show'])->name('admin.blogdashboard');
     Route::get('/Add-blog',[AdminController::class,'add_blog_show'])->name('add_blog_admin');
     Route::Post('/Add',[AdminController::class,'blog_add'])->name('admin.addblog');
     Route::get('deleted/{id}',[AdminController::class,'blog_delete'])->name('admin.delete');
     Route::get('update/{id}',[AdminController::class,'blog_update'])->name('admin.update');
     Route::POST('update',[AdminController::class,'blog_update_post'])->name('blog.update');
+    //car dashboard
+    Route::get('/Admin-panel-car',[admincarcontroller::class,'blog_show'])->name('admin.cardashboard');
+    Route::get('/Add-car',[admincarcontroller::class,'add_blog_show'])->name('add_blog_admin');
+    Route::Post('/Addcar',[admincarcontroller::class,'blog_add'])->name('admin.addblog');
+    Route::get('deletecar/{id}',[admincarcontroller::class,'blog_delete'])->name('admin.delete');
+    Route::get('updatecar/{id}',[admincarcontroller::class,'blog_update'])->name('admin.update');
+    Route::POST('updatecar',[admincarcontroller::class,'blog_update_post'])->name('blog.update');
 });
 
 

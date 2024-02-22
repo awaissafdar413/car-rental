@@ -4,7 +4,7 @@
             <!-- section begin -->
             @foreach ($blogs as $blog )
             <section id="subheader" class="jarallax text-light">
-                <img src="images/background/subheader.jpg" class="jarallax-img" alt="">
+                <img src="{{ $blog->featuredimage }}" class="jarallax-img" alt="">
                     <div class="center-y relative text-center">
                         <div class="container">
                             <div class="row">
