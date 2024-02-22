@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('car_name');
-            $table->string('car_review');
+            $table->Integer('car_review')->default(5);
             $table->foreignId('car_type');
             $table->string('car_image');
             $table->Integer('car_passenger');

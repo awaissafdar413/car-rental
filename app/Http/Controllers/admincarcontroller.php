@@ -18,7 +18,7 @@ class admincarcontroller extends Controller
         $file = $request->file('image');
         $extension= $file->getClientOriginalExtension();
         $filename= time().'.'.$extension;
-        $path='upload/blog/';
+        $path='upload/car/';
         $file->move($path, $filename);
 
     }
@@ -32,7 +32,6 @@ class admincarcontroller extends Controller
     $vehicle->car_passenger=$request->input('car_passenger');
     $vehicle->car_gate=$request->input('car_gate');
     $vehicle->car_rent=$request->input('car_rent');
-    $vehicle->blog=$request->input('content');
     $vehicle->shortdescription=$request->input('shortdescription');
     $vehicle->longdescription=$request->input('content');
     $vehicle->car_image=$path.$filename;
