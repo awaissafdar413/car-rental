@@ -38,6 +38,11 @@ class mainhomecontroller extends Controller
         // dd($blogs);
         return view('blog-single',compact('blogs'));
     }
+    function single_car_show($slug){
+        $cars=vehicle::where('id',$slug)->get();
+        // dd($blogs);
+        return view('car-single',compact('cars'));
+    }
 
     function dashboard(){
         $id=auth()->user()->id;
