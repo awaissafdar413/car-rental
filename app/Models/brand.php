@@ -15,4 +15,8 @@ class brand extends Model
         'created_at',
         'updated_at',
     ];
+    protected $primarykey = "brand_id";
+    public function vehicle(){
+        return $this->hasMany(\App\Models\vehicle::class,'car_type');
+    }
 }

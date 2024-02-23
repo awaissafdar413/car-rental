@@ -62,8 +62,8 @@
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="{{ route('home') }}">
-                                            <img class="logo-1" src="./images/logo-light.png" >
-                                            <img class="logo-2" src="./images/logo-light.png" >
+                                            <img class="logo-1" src="{{ asset('./images/logo-light.png') }}" >
+                                            <img class="logo-2" src="{{ asset('./images/logo-light.png') }}" >
                                         </a>
                                     </div>
                                     <!-- logo close -->

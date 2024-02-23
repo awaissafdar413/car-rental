@@ -22,6 +22,9 @@ class vehicle extends Model
         'created_at',
         'updated_at',
     ];
+    public function brand(){
+        return $this->belongsTo(\App\Models\brand::class,'car_type',"brand_id");
+    }
 
 }
 

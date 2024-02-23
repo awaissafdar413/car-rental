@@ -11,8 +11,8 @@
         <div class="card card-1">
             <div class="card-heading"></div>
             <div class="card-body">
-                <h2 class="title">Add Blog</h2>
-                <a href="{{ route('add_blog_admin') }}" class="btn btn-lg btn-main my-4">Blog Dashboard</a>
+                <h2 class="title">Car Dashboard</h2>
+                <a href="{{ route('admin.select') }}" class="btn btn-lg btn-main my-4">Add Car</a>
                 <table class="table table-light">
                     <tr>
                         <th  width="15%"class='fw-bold fs-3'>id</th>
@@ -26,11 +26,11 @@
                     <tr>
                         <td width="15%">{{$loop->iteration}}</td>
                         <td width="15%">{{ $data->car_name }}</td>
-                        <td width="15%">{{ $data->car_type }}</td>
+                        <td width="15%">{{ $data->brand->brand_name }}</td>
                         <td width="15%">{{ $data->car_rent }}</td>
                         <td width="15%">{{ $data->shortdescription }}</td>
                         <td width="15%"><a href="{{ route('admin.update',$data->id) }}" class="btn btn-danger btn-sm">Update</a></td>
-                        <td><a href="{{ url('deleted/'.$data->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                        <td><a href="{{ route('admin.cardelete',$data->id) }}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                     @endforeach

@@ -41,7 +41,7 @@ $slug = strtolower($final_slug);
 public function add_blog_show(){
     return view('admin.addblog');
 }
-   public function blog_delete($id){
+public function blog_delete($id){
     // $student = new blog;
     // $stud=$student->where('id',$id);
     // $stud->delete();

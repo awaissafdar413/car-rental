@@ -18,10 +18,10 @@ return new class extends Migration
             $table->foreignId('car_type');
             $table->string('car_image');
             $table->Integer('car_passenger');
-            $table->Integer('car_gate');
+            $table->Integer('car_gate')->nullable();
             $table->Integer('car_rent');
+            $table->Text('shortdescription')->nullable();
             $table->Text('longdescription');
-            $table->Text('shortdescription');
 
             // $table->foreign('car_type')->references('car_id')->on('brand');
             $table->timestamps();

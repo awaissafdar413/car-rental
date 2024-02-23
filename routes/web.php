@@ -41,7 +41,10 @@ Route::middleware(['auth','auth.admin'])->group(function () {
 
     Route::get('/car-admin-panel',[admincarcontroller::class,'all_car_show'])->name('admin.cardashboard');
     Route::get('/Add-car',[admincarcontroller::class,'addcar_show'])->name('admin.select');
-    Route::Post('/Addcar',[admincarcontroller::class,'add_car'])->name('admin.addblog');
+    Route::Post('/Addcar',[admincarcontroller::class,'add_car'])->name('admin.addcar');
+    Route::get('delete-car/{id}',[admincarcontroller::class,'car_delete'])->name('admin.cardelete');
+    Route::get('carupdate/{id}',[admincarcontroller::class,'car_update'])->name('admin.update');
+    Route::POST('car-update',[admincarcontroller::class,'car_update_post'])->name('car_update_post');
 
 });
 

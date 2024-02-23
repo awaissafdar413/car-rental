@@ -111,7 +111,7 @@
                     <div class="col-lg-12">
                         <div class="de-item mb30">
                             <div class="d-img">
-                                <img src="images\cars\{{ $car->car_image }}.jpg" class="img-fluid" alt="">
+                                <img src="{{ $car->car_image }}" class="img-fluid" alt="">
                             </div>
                             <div class="d-info">
                                 <div class="d-text">
