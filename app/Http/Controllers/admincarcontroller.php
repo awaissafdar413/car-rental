@@ -14,11 +14,13 @@ class admincarcontroller extends Controller
     // dd($datas);
     return view("admin-car.dashboard",compact("datas"));
    }
+
    public function addcar_show()
    {
     $cars=brand::all();
     return view("admin-car.addcar",compact("cars"));
    }
+
    public function add_car(request $request){
    $request->validate([
     'car_name'=>"required",
@@ -47,7 +49,12 @@ class admincarcontroller extends Controller
     $vehicle->car_gate=$request->input('car_gate');
     $vehicle->car_rent=$request->input('car_rent');
     $vehicle->shortdescription=$request->input('shortdescription');
-    $vehicle->longdescription=$request->input('content');
+    $vehicle->car_luggage=$request->input('car_luggage');
+    $vehicle->car_fuel_type=$request->input('car_fuel_type');
+    $vehicle->car_engine=$request->input('car_engine');
+    $vehicle->car_model_year=$request->input('car_model_year');
+    $vehicle->car_exterior_color=$request->input('car_exterior_color');
+    $vehicle->car_interior_color=$request->input('car_interior_color');
     $vehicle->car_image=$path.$filename;
     $vehicle->save();
     return redirect('/car');
@@ -85,7 +92,12 @@ public function car_update_post(request $request){
      $vehicle->car_gate=$request->input('car_gate');
      $vehicle->car_rent=$request->input('car_rent');
      $vehicle->shortdescription=$request->input('shortdescription');
-     $vehicle->longdescription=$request->input('content');
+     $vehicle->car_luggage=$request->input('car_Luggage');
+     $vehicle->car_fuel_type=$request->input('car_fuel_type');
+     $vehicle->car_engine=$request->input('car_engine');
+     $vehicle->car_model_year=$request->input('car_model_year');
+     $vehicle->car_exterior_color=$request->input('car_exterior_color');
+     $vehicle->car_interior_color=$request->input('car_interior_color');
      $vehicle->car_image=$path.$filename;
      $vehicle->update();
      return redirect('/car');

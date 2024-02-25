@@ -52,6 +52,42 @@
                             @enderror
                         </div>
                         <div class="input-group">
+                            <input class="input--style-1" type="Number" placeholder="Enter Luggage" name="car_Luggage">
+                                @error('car_Luggage')
+                                <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="Number" placeholder="Enter Fuel Type" name="car_fuel_type">
+                                @error('car_fuel_type')
+                                <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Enter Engine detail"  name="car_engine">
+                                @error('car_engine')
+                                <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="Number" placeholder="Enter medel Year" name="car_model_year">
+                                @error('car_model_year')
+                                <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Enter Exterior Color" name="car_exterior_color">
+                                @error('car_exterior_color')
+                                <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="Text" placeholder="Enter Interior Color" name="car_interior_color">
+                                @error('car_interior_color')
+                                <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="input-group">
                             <input class="input--style-1" type="file" placeholder="Enter Car image" name="image">
                             @error('image')
                             <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
@@ -66,19 +102,7 @@
                                 name="shortdescription">
                         </div>
                         <br>
-                        <div class="content">
-                            Enter Your Long Description
-                        </div>
-                        <br>
-                        <div class="input-group">
-
-                            <textarea class="form-control" id="content" style="
-                        width: 100%;
-                    "
-                                placeholder="Enter the Long Description" name="content"></textarea>
-                        </div>
-
-                        <div class="p-t-20">
+                    <div class="p-t-20">
                             <button class="btn btn--radius btn-main btn--green" type="submit">Submit</button>
                         </div>
                     </form>
@@ -88,21 +112,12 @@
     </div>
 @endsection
 @push('style')
-    <script src="{{ asset('ckeditor/ckeditor/ckeditor.js') }}"></script>
     <style>
         input {
             font-size: 18px !important;
             padding: 11px 22px !important;
         }
-
-        .content {
-            font-size: 21px;
-            font-weight: 800;
-        }
     </style>
 @endpush
 @push('script')
-    <script>
-        CKEDITOR.replace('content');
-    </script>
 @endpush

@@ -181,38 +181,40 @@
 
                 <div class="col-lg-9">
                     <div class="row">
-                        @foreach ($cars as $car)
-                        <div class="col-xl-4 col-lg-6">
-                            <div class="de-item mb30">
-                                <div class="d-img">
-                                    <img src="{{ $car->car_image }}" class="img-fluid" alt="">
-                                </div>
-                                <div class="d-info">
-                                    <div class="d-text">
-                                        <h4>{{ $car->car_name }}</h4>
-                                        <div class="d-item_like">
-                                            <i class="fa fa-heart"></i><span>{{ $car->car_review }}</span>
-                                        </div>
-                                        <div class="d-atr-group">
-                                            <span class="d-atr"><img src="images/icons/1-green.svg" alt="">{{
-                                                $car->car_passenger }}</span>
-                                            {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
-                                            --}}
-                                            <span class="d-atr"><img src="images/icons/3-green.svg" alt="">{{
-                                                $car->car_gate }}</span>
-                                            <span class="d-atr"><img src="images/icons/4-green.svg" alt="">{{
-                                                $car->car_type }}</span>
-                                            <span class="d-atr">{{ $car->brand_name }}</span>
-                                        </div>
-                                        <div class="d-price">
-                                            Daily rate from <span>${{ $car->car_rent }}</span>
-                                            <a class="btn-main" href="{{route('singlecar',$car->id)}}">Rent Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+                      @foreach ($cars as $car)
+                      <div class="col-xl-4 col-lg-6">
+                          <div class="de-item mb30">
+                              <div class="d-img">
+                                  <img src="{{ $car->car_image }}" class="img-fluid" alt="">
+                              </div>
+                              <div class="d-info">
+                                  <div class="d-text">
+                                      <a class="h2" href="{{route('singlecar',$car->id)}}"> <h3>{{ $car->car_name }}</h3></a>
+                                      {{-- <h4>{{ $car->car_name }}</h4> --}}
+                                      <div class="d-item_like">
+                                          <i class="fa fa-heart"></i><span>{{ $car->car_review }}</span>
+                                      </div>
+                                      <div class="d-atr-group">
+                                          <span class="d-atr"><img src="images/icons/1-green.svg" alt="">{{
+                                              $car->car_passenger }}</span>
+                                          {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
+                                          --}}
+                                          <span class="d-atr"><img src="images/icons/3-green.svg" alt="">{{
+                                              $car->car_gate }}</span>
+                                          <span class="d-atr"><img src="images/icons/4-green.svg" alt="">{{
+                                              $car->car_type }}</span>
+                                          <span class="d-atr">{{ $car->brand_name }}</span>
+                                      </div>
+                                      <div class="d-price">
+                                          Daily rate from <span>${{ $car->car_rent }}</span>
+                                          <a class="btn-main" href="{{route('singlecar',$car->id)}}">Rent Now</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      @endforeach
+
                     </div>
                 </div>
             </div>

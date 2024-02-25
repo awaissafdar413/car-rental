@@ -21,8 +21,12 @@ return new class extends Migration
             $table->Integer('car_gate')->nullable();
             $table->Integer('car_rent');
             $table->Text('shortdescription')->nullable();
-            $table->Text('longdescription');
-
+            $table->string('car_luggage');
+            $table->string('car_fuel_type');
+            $table->string('car_Engine');
+            $table->string('car_model_year');
+            $table->string('car_Exterior_color');
+            $table->string('car_Interior_color');
             // $table->foreign('car_type')->references('car_id')->on('brand');
             $table->timestamps();
         });

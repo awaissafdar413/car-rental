@@ -3,7 +3,7 @@
 
             <!-- section begin -->
             <section id="subheader" class="jarallax text-light">
-                <img src="images/background/2.jpg" class="jarallax-img" alt="">
+                <img src="{{asset('images/background/2.jpg')}}" class="jarallax-img" alt="">
                     <div class="center-y relative text-center">
                         <div class="container">
                             <div class="row">
@@ -48,33 +48,33 @@
                             <div class="de-spec">
                                 <div class="d-row">
                                     <span class="d-title">Body</span>
-                                    <spam class="d-value">Sedan</spam>
+                                    <spam class="d-value"> {{$car->brand->brand_name}}</spam>
                                 </div>
                                 <div class="d-row">
                                     <span class="d-title">Seat</span>
-                                    <spam class="d-value">2 seats</spam>
+                                    <spam class="d-value"> {{$car->car_passenger}} seats</spam>
                                 </div>
                                 <div class="d-row">
                                     <span class="d-title">Door</span>
-                                    <spam class="d-value">2 doors</spam>
+                                    <spam class="d-value"> {{$car->car_gate}} doors</spam>
                                 </div>
                                 <div class="d-row">
                                     <span class="d-title">Luggage</span>
-                                    <spam class="d-value">150</spam>
+                                    <spam class="d-value"> {{$car->car_luggage}}</spam>
                                 </div>
                                 <div class="d-row">
                                     <span class="d-title">Fuel Type</span>
-                                    <spam class="d-value">Hybird</spam>
+                                    <spam class="d-value"> {{$car->car_fuel_type}}</spam>
                                 </div>
                                 <div class="d-row">
                                     <span class="d-title">Engine</span>
-                                    <spam class="d-value">3000</spam>
+                                    <spam class="d-value"> {{$car->car_engine}}</spam>
                                 </div>
                                 <div class="d-row">
                                     <span class="d-title">Year</span>
-                                    <spam class="d-value">2020</spam>
+                                    <spam class="d-value"> {{$car->car_model_year}}</spam>
                                 </div>
-                                <div class="d-row">
+                                {{-- <div class="d-row">
                                     <span class="d-title">Mileage</span>
                                     <spam class="d-value">200</spam>
                                 </div>
@@ -89,32 +89,33 @@
                                 <div class="d-row">
                                     <span class="d-title">Fuel Economy</span>
                                     <spam class="d-value">18.5</spam>
-                                </div>
+                                </div> --}}
                                 <div class="d-row">
                                     <span class="d-title">Exterior Color</span>
-                                    <spam class="d-value">Blue Metalic</spam>
+                                    <spam class="d-value"> {{$car->car_exterior_color}}</spam>
                                 </div>
                                 <div class="d-row">
                                     <span class="d-title">Interior Color</span>
-                                    <spam class="d-value">Black</spam>
+                                    <spam class="d-value">{{$car->car_interior_color}}</spam>
                                 </div>
                             </div>
 
                             <div class="spacer-single"></div>
 
-                            <h4>Features</h4>
+                            {{-- <h4>Features</h4>
                             <ul class="ul-style-2">
                                 <li>Bluetooth</li>
                                 <li>Multimedia Player</li>
                                 <li>Central Lock</li>
                                 <li>Sunroof</li>
                             </ul>
-                        </div>
+                        </div> --}}
 
                         <div class="col-lg-3">
                             <div class="de-price text-center">
                                 Daily rate
-                                <h3>$265</h3>
+                                <h3>$
+                                    {{$car->car_rent}}</h3>
                             </div>
                             <div class="spacer-30"></div>
                             <div class="de-box text-light mb25">

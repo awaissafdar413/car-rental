@@ -19,6 +19,13 @@ class vehicle extends Model
         'car_passenger',
         'car_gate',
         'car_rent',
+        'car_luggage',
+        'car_fuel_type',
+        'car_engine',
+        'car_model_year',
+        'car_exterior_color',
+        'car_interior_color',
+        'shortdescription',
         'created_at',
         'updated_at',
     ];
