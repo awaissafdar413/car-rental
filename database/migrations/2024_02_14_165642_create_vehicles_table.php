@@ -23,10 +23,10 @@ return new class extends Migration
             $table->Text('shortdescription')->nullable();
             $table->string('car_luggage');
             $table->string('car_fuel_type');
-            $table->string('car_Engine');
+            $table->string('car_engine');
             $table->string('car_model_year');
-            $table->string('car_Exterior_color');
-            $table->string('car_Interior_color');
+            $table->string('car_exterior_color');
+            $table->string('car_interior_color');
             // $table->foreign('car_type')->references('car_id')->on('brand');
             $table->timestamps();
         });

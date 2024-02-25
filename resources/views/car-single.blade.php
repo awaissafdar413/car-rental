@@ -24,7 +24,7 @@
                         <div class="col-lg-6">
                             {{-- <div id="slider-carousel" class="owl-carousel"> --}}
                                 <div class="item">
-                                    <img src="{{asset($car->car_image)}}" alt="">
+                                    <img src="{{asset($car->car_image)}}" alt="" >
                                 </div>
                                 {{-- <div class="item">
                                     <img src="images/car-single/2.jpg" alt="">
@@ -108,8 +108,8 @@
                                 <li>Multimedia Player</li>
                                 <li>Central Lock</li>
                                 <li>Sunroof</li>
-                            </ul>
-                        </div> --}}
+                            </ul> --}}
+                        </div>
 
                         <div class="col-lg-3">
                             <div class="de-price text-center">

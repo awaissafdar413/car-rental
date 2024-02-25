@@ -52,13 +52,13 @@
                             @enderror
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="Number" placeholder="Enter Luggage" name="car_Luggage">
+                            <input class="input--style-1" type="Number" placeholder="Enter Luggage" name="car_luggage">
                                 @error('car_Luggage')
                                 <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="Number" placeholder="Enter Fuel Type" name="car_fuel_type">
+                            <input class="input--style-1" type="text" placeholder="Enter Fuel Type" name="car_fuel_type">
                                 @error('car_fuel_type')
                                 <p  class="alert alert-primary w-100" role="alert">{{ $message }}</p>
                             @enderror

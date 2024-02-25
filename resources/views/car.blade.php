@@ -185,7 +185,7 @@
                       <div class="col-xl-4 col-lg-6">
                           <div class="de-item mb30">
                               <div class="d-img">
-                                  <img src="{{ $car->car_image }}" class="img-fluid" alt="">
+                                  <img src="{{ $car->car_image }}" class="img-fluid" style="width: 100%;height: 240px;" alt="{{ $car->car_name }}">
                               </div>
                               <div class="d-info">
                                   <div class="d-text">
