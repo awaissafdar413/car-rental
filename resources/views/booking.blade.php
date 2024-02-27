@@ -37,12 +37,12 @@
                                             <div class="de_form de_radio row g-3">
                                                 <div class="radio-img col-lg-3 col-sm-3 col-6">
                                                     <input id="radio-1a" name="Car_Type" type="radio" value="Residential" checked="checked">
-                                                    <label for="radio-1a"><img src="images/select-form/car.png" alt="">Car</label>
+                                                    <label for="radio-1a"><img src="{{ asset('images/select-form/car.png') }}" alt="">Car</label>
                                                 </div>
 
                                                 <div class="radio-img col-lg-3 col-sm-3 col-6">
                                                     <input id="radio-1b" name="Car_Type" type="radio" value="Office">
-                                                    <label for="radio-1b"><img src="images/select-form/van.png" alt="">Van</label>
+                                                    <label for="radio-1b"><img src="{{ asset('images/select-form/van.png') }}" alt="">Van</label>
                                                 </div>
 
                                                 <div class="radio-img col-lg-3 col-sm-3 col-6">
@@ -215,8 +215,8 @@
                         <div class="col-md-3 wow fadeInRight" data-wow-delay=".2s" >
                             <div class="feature-box style-4 text-center">
                                 <a href="#"><i class="bg-color text-light i-boxed fa fa-car"></i></a>
-                                <div class="text">
-                                    <a href="#"><h4>Choose a vehicle</h4></a>
+                                <div class="text" style="color: #1ECB15">
+                                    <a href="#"><h4 style="color: #1ECB15">Choose a vehicle</h4></a>
                                     Unlock unparalleled adventures and memorable journeys with our vast fleet of vehicles tailored to suit every need, taste, and destination.
                                 </div>
                                 <span class="wm">1</span>
@@ -226,8 +226,8 @@
                         <div class="col-md-3 wow fadeInRight" data-wow-delay=".4s" >
                             <div class="feature-box style-4 text-center">
                                 <a href="#"><i class="bg-color text-light i-boxed fa fa-calendar"></i></a>
-                                <div class="text">
-                                    <a href="#"><h4>Pick location &amp; date</h4></a>
+                                <div class="text" style="color: #1ECB15">
+                                    <a href="#"><h4 style="color: #1ECB15">Pick location &amp; date</h4></a>
                                     Pick your ideal location and date, and let us take you on a journey filled with convenience, flexibility, and unforgettable experiences.
                                 </div>
                                 <span class="wm">2</span>
@@ -237,8 +237,8 @@
                         <div class="col-md-3 wow fadeInRight" data-wow-delay=".6s" >
                             <div class="feature-box style-4 text-center">
                                 <a href="#"><i class="bg-color text-light i-boxed fa fa-pencil-square-o"></i></a>
-                                <div class="text">
-                                    <a href="#"><h4>Make a booking</h4></a>
+                                <div class="text" style="color: #1ECB15">
+                                    <a href="#"><h4 style="color: #1ECB15">Make a booking</h4></a>
                                     Secure your reservation with ease, unlocking a world of possibilities and embarking on your next adventure with confidence.
                                 </div>
                                 <span class="wm">3</span>
@@ -248,11 +248,11 @@
                         <div class="col-md-3 wow fadeInRight" data-wow-delay=".6s" >
                             <div class="feature-box style-4 text-center">
                                 <a href="#"><i class="bg-color text-light i-boxed fa fa-smile-o"></i></a>
-                                <div class="text">
-                                    <a href="#"><h4>Sit back & relax</h4></a>
+                                <div class="text" style="color: #1ECB15">
+                                    <a href="#"><h4 style="color: #1ECB15">Sit back & relax</h4></a>
                                     Hassle-free convenience as we take care of every detail, allowing you to unwind and embrace a journey filled comfort.
                                 </div>
-                                <span class="wm">3</span>
+                                <span class="wm">4</span>
                             </div>
                         </div>
                     </div>

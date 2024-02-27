@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="item_filter_group">
+                  <div class="item_filter_group">
                         <h4>Vehicle Type</h4>
                         <div class="de_form">
                             <select class="btn-main fs-5" id="category" id="category">
@@ -38,8 +38,19 @@
 
                         </div>
                     </div>
-
                     {{-- <div class="item_filter_group">
+                        <h4>Car Body Type</h4>
+                        <div class="de_form">
+                            @foreach ($types as $type)
+                            <div class="de_checkbox">
+                                <input id="{{ $type->brand_id }}" name="car_body_type_1" type="checkbox"
+                                    value="{{ $type->brand_id }}">
+                                <label for="{{ $type->brand_id }}">{{ $type->brand_name }}</label>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="item_filter_group">
                         <h4>Car Body Type</h4>
                         <div class="de_form">
                             <div class="de_checkbox">
@@ -129,7 +140,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="item_filter_group">
                         <h4>Car Engine Capacity (cc)</h4>
@@ -176,11 +187,11 @@
                             <input type="range" class="range-min" min="0" max="2000" value="0" step="1">
                             <input type="range" class="range-max" min="0" max="2000" value="2000" step="1">
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
 
                 <div class="col-lg-9">
-                    <div class="row">
+                    <div class="row" id="cards">
                       @foreach ($cars as $car)
                       <div class="col-xl-4 col-lg-6">
                           <div class="de-item mb30">
@@ -234,7 +245,26 @@
                     type:"GET",
                     data:{'category':category},
                     success:function(data){
-                        console.log(data);
+                        var products=data.products;
+                        var html="";
+                    //    console.log(products);
+                        if(products.length > 0)
+                        {
+                            // for (let i=0; i<products.length;i++)
+                            // {
+                            //    document.write(products[i]);
+                            //    document.write('<br>');
+                            //    console.log(products)
+                            // }
+                            products.forEach(element => {
+                                document.write(products[element]);
+                                console.log(products[id]);
+                            });
+                        }
+                        else{
+
+                        }
+                        $('#cards').html(html);
                     }
                 })
             })
