@@ -24,14 +24,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                  <div class="item_filter_group">
+                    <div class="item_filter_group">
                         <h4>Vehicle Type</h4>
                         <div class="de_form">
                             <select class="btn-main fs-5" id="category" id="category">
-                                <option value="" class="bg-dark">Select Brand</option>
+                                <option value=" " class="bg-dark">Select Brand</option>
                                 @foreach ($types as $type)
                                 <div class="de_checkbox">
-                                   <option value="{{ $type->brand_id }}" class="bg-dark">{{ $type->brand_name }}</option>
+                                    <option value="{{ $type->brand_id }}" class="bg-dark">{{ $type->brand_name }}
+                                    </option>
                                 </div>
                                 @endforeach
                             </select>
@@ -192,39 +193,43 @@
 
                 <div class="col-lg-9">
                     <div class="row" id="cards">
-                      @foreach ($cars as $car)
-                      <div class="col-xl-4 col-lg-6">
-                          <div class="de-item mb30">
-                              <div class="d-img">
-                                  <img src="{{ $car->car_image }}" class="img-fluid" style="width: 100%;height: 240px;" alt="{{ $car->car_name }}">
-                              </div>
-                              <div class="d-info">
-                                  <div class="d-text">
-                                      <a class="h2" href="{{route('singlecar',$car->id)}}"> <h3>{{ $car->car_name }}</h3></a>
-                                      {{-- <h4>{{ $car->car_name }}</h4> --}}
-                                      <div class="d-item_like">
-                                          <i class="fa fa-heart"></i><span>{{ $car->car_review }}</span>
-                                      </div>
-                                      <div class="d-atr-group">
-                                          <span class="d-atr"><img src="images/icons/1-green.svg" alt="">{{
-                                              $car->car_passenger }}</span>
-                                          {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
-                                          --}}
-                                          <span class="d-atr"><img src="images/icons/3-green.svg" alt="">{{
-                                              $car->car_gate }}</span>
-                                          <span class="d-atr"><img src="images/icons/4-green.svg" alt="">{{
-                                              $car->car_type }}</span>
-                                          <span class="d-atr">{{ $car->brand_name }}</span>
-                                      </div>
-                                      <div class="d-price">
-                                          Daily rate from <span>${{ $car->car_rent }}</span>
-                                          <a class="btn-main" href="{{route('singlecar',$car->id)}}">Rent Now</a>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      @endforeach
+                        @foreach ($cars as $car)
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="de-item mb30">
+                                <div class="d-img">
+                                    <img src="{{ $car->car_image }}" class="img-fluid"
+                                        style="width: 100%;height: 240px;" alt="{{ $car->car_name }}">
+                                </div>
+                                <div class="d-info">
+                                    <div class="d-text">
+                                        <a class="h2" href="{{ route('singlecar', $car->id) }}">
+                                            <h3>{{ $car->car_name }}</h3>
+                                        </a>
+                                        {{-- <h4>{{ $car->car_name }}</h4> --}}
+                                        <div class="d-item_like">
+                                            <i class="fa fa-heart"></i><span>{{ $car->car_review }}</span>
+                                        </div>
+                                        <div class="d-atr-group">
+                                            <span class="d-atr"><img src="images/icons/1-green.svg" alt="">{{
+                                                $car->car_passenger }}</span>
+                                            {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
+                                            --}}
+                                            <span class="d-atr"><img src="images/icons/3-green.svg" alt="">{{
+                                                $car->car_gate }}</span>
+                                            <span class="d-atr"><img src="images/icons/4-green.svg" alt="">{{
+                                                $car->car_type }}</span>
+                                            <span class="d-atr">{{ $car->brand_name }}</span>
+                                        </div>
+                                        <div class="d-price">
+                                            Daily rate from <span>${{ $car->car_rent }}</span>
+                                            <a class="btn-main" href="{{ route('singlecar', $car->id) }}">Rent
+                                                Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
 
                     </div>
                 </div>
@@ -237,39 +242,45 @@
 <!-- content close -->
 @push('script')
 <script>
-    $(document).ready(function(){
-            $('#category').on('change',function(){
-                var category = $(this).val();
-                $.ajax({
-                    url:"{{ route('car') }}",
-                    type:"GET",
-                    data:{'category':category},
-                    success:function(data){
-                        var products=data.products;
-                        var html="";
-                    //    console.log(products);
-                        if(products.length > 0)
-                        {
-                            // for (let i=0; i<products.length;i++)
-                            // {
-                            //    document.write(products[i]);
-                            //    document.write('<br>');
-                            //    console.log(products)
-                            // }
-                            products.forEach(element => {
-                                document.write(products[element]);
-                                console.log(products[id]);
-                            });
-                        }
-                        else{
+    $(document).ready(function() {
+                $('#category').on('change', function() {
+                    var category = $(this).val();
+                    $.ajax({
+                        url: "{{ route('car') }}",
+                        type: "GET",
+                        data: {
+                            'category': category
+                        },
+                        success: function(data) {
+                            var products = data.products;
+                            var html = "";
+                               console.log(products);
+                            if (products.length > 0) {
 
+                                products.forEach(element => {
+                                    console.log(element)
+                                    //  console.log(products[id]);
+                                    document.write('New Reord ' + "<br>" );
+                                    document.write(element.id + "<br>" );
+                                     // document.write(element.id);
+                                   document.write(element.car_name + "<br>" );
+                                    document.write(element.car_review + "<br>" );
+                                    document.write(element.car_image + "<br>" );
+                                    document.write(element.car_engine+ "<br>"  );
+                                    document.write(element.car_gate + "<br>" );
+                                });
+                                products.forEach(element => {
+
+                                });
+
+                            } else {
+
+                            }
+                            $('#cards').html(html);
                         }
-                        $('#cards').html(html);
-                    }
+                    })
                 })
-            })
-           });
+            });
 </script>
 @endpush
-
 @endsection

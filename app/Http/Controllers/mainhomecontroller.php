@@ -22,7 +22,6 @@ class mainhomecontroller extends Controller
             }else{
                 $cars = $query->where(['car_type'=>$request->category])->get();
                 return response()->json(['products'=>$cars]);
-                // return view('car',compact('cars','types'));
             }
         }
         $cars = $query->get();
