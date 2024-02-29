@@ -252,31 +252,8 @@
                             'category': category
                         },
                         success: function(data) {
-                            var products = data.products;
-                            var html = "";
-                               console.log(products);
-                            if (products.length > 0) {
 
-                                products.forEach(element => {
-                                    console.log(element)
-                                    //  console.log(products[id]);
-                                    document.write('New Reord ' + "<br>" );
-                                    document.write(element.id + "<br>" );
-                                     // document.write(element.id);
-                                   document.write(element.car_name + "<br>" );
-                                    document.write(element.car_review + "<br>" );
-                                    document.write(element.car_image + "<br>" );
-                                    document.write(element.car_engine+ "<br>"  );
-                                    document.write(element.car_gate + "<br>" );
-                                });
-                                products.forEach(element => {
-
-                                });
-
-                            } else {
-
-                            }
-                            $('#cards').html(html);
+                            $('#cards').html(data);
                         }
                     })
                 })
