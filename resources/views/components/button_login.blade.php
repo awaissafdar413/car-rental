@@ -14,9 +14,6 @@
             @auth
             @if(Auth::user()->utype === 'ADM')
             <li>
-                <a class="dropdown-item" href="{{route('user.dashboard')}}" class="d-block">My Account</a>
-            </li>
-            <li>
                 <a class="dropdown-item" href="{{route('admin.blogdashboard')}}" class="d-block">Blog Dashboard</a>
             </li>
             <li>

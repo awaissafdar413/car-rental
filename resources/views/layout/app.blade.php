@@ -4,11 +4,13 @@
     <title>Rentaly </title>
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
+    <meta content="{{ csrf_token() }}" name="csrf-token">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
     <meta content="" name="keywords">
     <meta content="" name="author">
-    <!-- CSS Files
+        <!-- CSS Files
     ================================================== -->
     @stack('style')
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
@@ -77,9 +79,7 @@
                                     </li>
                                     <li><a class="menu-item" href="{{ route('about') }}">about</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('blog') }}">Blog</a>
-                                    </li>
-                                    <li><a class="menu-item" href="{{ route('gallery') }}">Gallery</a>
+                                    <li><a class="menu-item" href="{{ route('booking') }}">Booking</a>
                                     </li>
                                     <li id="admin-social">
                                         @include('components.button_login')
@@ -184,6 +184,7 @@
         </footer>
         <!-- footer close -->
     </div>
+
     {{-- <div id="selector">
         <div id="demo-rtl" class="sc-opt">
             <div class="sc-icon">RTL</div><span class="sc-val">Click to Enable</span>
@@ -195,6 +196,36 @@
     <script src="{{ asset('js/plugins.js') }}"></script>
     <script src="{{ asset("js/designesia.js") }}"></script>
     @stack('script')
+
+
+    <script>
+          $.ajaxSetup({
+                headers:{
+                    'X-CSRF-TOKEN':$('meta[name:"csrf-token"]').attr('content')
+                }
+            });
+        function addToWishlist(id){
+
+            $.ajax({
+                url:'{{ route("addToWishlist") }}',
+                type: 'post',
+                data:{
+
+                        _token:'{!! csrf_token() !!}',
+                        id:id
+                },
+                dataType: 'json',
+                success: function(response)
+                {
+                    if(response.status==true){
+                    }
+                    else{
+                        window.location.href="{{ route('login') }}";
+                    }
+                }
+            })
+        }
+    </script>
 
 </body>
 
