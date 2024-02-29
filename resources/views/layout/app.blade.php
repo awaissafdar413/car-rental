@@ -77,7 +77,9 @@
                                     </li>
                                     <li><a class="menu-item" href="{{ route('about') }}">about</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('booking') }}">Booking</a>
+                                    <li><a class="menu-item" href="{{ route('blog') }}">Blog</a>
+                                    </li>
+                                    <li><a class="menu-item" href="{{ route('gallery') }}">Gallery</a>
                                     </li>
                                     <li id="admin-social">
                                         @include('components.button_login')

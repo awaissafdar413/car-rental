@@ -68,6 +68,9 @@ Route::get('/blog/{slug}', [mainhomecontroller::class,'blog_single'])->name('blo
 Route::get('/booking', function () {
     return view('booking');
 })->name('booking');
+Route::get('/gallery', function () {
+    return view('gallery');
+})->name('gallery');
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
