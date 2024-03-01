@@ -4,13 +4,11 @@
     <title>Rentaly </title>
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-
-    <meta content="{{ csrf_token() }}" name="csrf-token">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
     <meta content="" name="keywords">
     <meta content="" name="author">
-        <!-- CSS Files
+    <!-- CSS Files
     ================================================== -->
     @stack('style')
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
@@ -184,7 +182,6 @@
         </footer>
         <!-- footer close -->
     </div>
-
     {{-- <div id="selector">
         <div id="demo-rtl" class="sc-opt">
             <div class="sc-icon">RTL</div><span class="sc-val">Click to Enable</span>
@@ -194,39 +191,8 @@
     <!-- Javascript Files
     ================================================== -->
     <script src="{{ asset('js/plugins.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js" integrity="sha512-bztGAvCE/3+a1Oh0gUro7BHukf6v7zpzrAb3ReWAVrt+bVNNphcl2tDTKCBr5zk7iEDmQ2Bv401fX3jeVXGIcA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset("js/designesia.js") }}"></script>
     @stack('script')
-
-
-    <script>
-          $.ajaxSetup({
-                headers:{
-                    'X-CSRF-TOKEN':$('meta[name:"csrf-token"]').attr('content')
-                }
-            });
-        function addToWishlist(id){
-
-            $.ajax({
-                url:'{{ route("addToWishlist") }}',
-                type: 'post',
-                data:{
-
-                        _token:'{!! csrf_token() !!}',
-                        id:id
-                },
-                dataType: 'json',
-                success: function(response)
-                {
-                    if(response.status==true){
-                    }
-                    else{
-                        window.location.href="{{ route('login') }}";
-                    }
-                }
-            })
-        }
-    </script>
 
 </body>
 

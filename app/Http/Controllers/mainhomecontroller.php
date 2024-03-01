@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\models\vehicle;
 use App\models\blog;
-use App\models\wishlist;
 use App\models\brand;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -21,6 +19,7 @@ class mainhomecontroller extends Controller
         {
             if(empty($request->category)){
                 $cars = $query->get();
+<<<<<<< HEAD
 <<<<<<< HEAD
                 if($cars)
                 $output ='';
@@ -41,8 +40,7 @@ class mainhomecontroller extends Controller
                                             <h3> '.$car->car_name .'</h3>
                                         </a>
                                         <div class="d-item_like">
-                                        <a onclick="addToWishlist({{'. $car->id .'}})" href="javascript:void(0);"><i class="fa fa-heart"></i></a><span> '.$car->car_review.' </span>
-                                            // <i class="fa fa-heart"></i><span> '.$car->car_review.' </span>
+                                            <i class="fa fa-heart"></i><span> '.$car->car_review.' </span>
                                         </div>
                                         <div class="d-atr-group">
                                             <span class="d-atr"><img src="images/icons/1-green.svg" alt="">
@@ -68,6 +66,9 @@ class mainhomecontroller extends Controller
                 return response()->json($output);
             }
             else{
+=======
+            }else{
+>>>>>>> parent of 98a9d03 (o)
 =======
             }else{
 >>>>>>> parent of 98a9d03 (o)
@@ -161,22 +162,5 @@ class mainhomecontroller extends Controller
         ]);
 
         return redirect()->back();
-    }
-    public function addToWishlist(Request $request)
-    {
-        if(Auth::check()== false)
-        {
-            session(['url.intended'=>url()->previous()]);
-            return response()->jsoon([
-                'status'=>false
-            ]);
-        }
-        $wishlist = new wishlist;
-        $wishlist -> user_id =Auth::user()->id;
-        $wishlist -> user_id =$request->id;
-        $wishlist->save();
-        return response()->json([
-            'status'=>true
-        ]);
     }
 }

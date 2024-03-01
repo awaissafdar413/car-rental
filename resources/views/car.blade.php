@@ -207,9 +207,7 @@
                                         </a>
                                         {{-- <h4>{{ $car->car_name }}</h4> --}}
                                         <div class="d-item_like">
-
-                                            <a onclick="addToWishlist({{ $car->id }})" href="javascript:void(0);"><i class="fa fa-heart"></i></a>
-                                            <span>{{ $car->car_review }}</span>
+                                            <i class="fa fa-heart"></i><span>{{ $car->car_review }}</span>
                                         </div>
                                         <div class="d-atr-group">
                                             <span class="d-atr"><img src="images/icons/1-green.svg" alt="">{{

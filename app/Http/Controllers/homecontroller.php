@@ -25,10 +25,4 @@ class HomeController extends Controller
     {
         return view('index');
     }
-    public function intended(){
-        if(session()->has('url.intended')){
-            return redirect(session()->get('url.inrended'));
-        }
-    }
-
 }

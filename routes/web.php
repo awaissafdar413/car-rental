@@ -63,7 +63,6 @@ Route::get('/about', function () {
 Route::get('/car', [mainhomecontroller::class,'car_show'])->name('car');
 Route::get('/car/{id}', [mainhomecontroller::class,'single_car_show'])->name('singlecar');
 Route::get('/blog', [mainhomecontroller::class,'blog_show'])->name('blog');
-Route::post('/addtowishlist', [mainhomecontroller::class,'addToWishlist'])->name('addToWishlist');
 Route::get('/blog/{slug}', [mainhomecontroller::class,'blog_single'])->name('blog-single');
 
 Route::get('/booking', function () {
