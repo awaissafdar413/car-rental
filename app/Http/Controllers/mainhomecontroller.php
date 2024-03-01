@@ -21,6 +21,7 @@ class mainhomecontroller extends Controller
                 $cars = $query->get();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if($cars)
                 $output ='';
                 {
@@ -66,6 +67,9 @@ class mainhomecontroller extends Controller
                 return response()->json($output);
             }
             else{
+=======
+            }else{
+>>>>>>> parent of 98a9d03 (o)
 =======
             }else{
 >>>>>>> parent of 98a9d03 (o)
