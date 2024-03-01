@@ -19,9 +19,6 @@ class mainhomecontroller extends Controller
         {
             if(empty($request->category)){
                 $cars = $query->get();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                 if($cars)
                 $output ='';
                 {
@@ -67,15 +64,6 @@ class mainhomecontroller extends Controller
                 return response()->json($output);
             }
             else{
-=======
-            }else{
->>>>>>> parent of 98a9d03 (o)
-=======
-            }else{
->>>>>>> parent of 98a9d03 (o)
-=======
-            }else{
->>>>>>> parent of 98a9d03 (o)
                 $cars = $query->where(['car_type'=>$request->category])->get();
                 if($cars)
                 $output ='';
@@ -93,6 +81,7 @@ class mainhomecontroller extends Controller
                                 <div class="d-info">
                                     <div class="d-text">
                                         <a class="h2" href="">
+                                        <a class="h2" href="">
                                             <h3> '.$car->car_name .'</h3>
                                         </a>
                                         <div class="d-item_like">
@@ -109,6 +98,7 @@ class mainhomecontroller extends Controller
                                         </div>
                                         <div class="d-price">
                                             Daily rate from <span>$ '.$car->car_rent.' </span>
+                                            <a class="btn-main" href="">Rent
                                             <a class="btn-main" href="">Rent
                                                 Now</a>
                                         </div>
