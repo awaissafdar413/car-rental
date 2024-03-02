@@ -77,5 +77,8 @@ Route::get('/register', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
+Route::get('/contact-us', function () {
+    return view('contact');
+})->name('contactus');
 
 

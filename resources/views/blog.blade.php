@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 @endforeach
-                {{--
-                <div class="col-lg-6 mb20">
+
+                {{-- <div class="col-lg-6 mb20">
                     <div class="bloglist s2 item">
                         <div class="post-content">
                             <div class="post-image">

@@ -83,11 +83,12 @@
                                     </li>
                                     <li><a class="menu-item" href="{{ route('blog') }}">Blog</a>
                                     </li>
+                                    <li><a class="menu-item" href="{{ route('contactus') }}">Contact</a>
+                                    </li>
                                     <li id="admin-social">
                                         @include('components.button_login')
                                     </li>
-                                    {{-- <li><a class="menu-item" href="{{ route('account-dashboard', Auth::user()->id) }}">My Account</a>
-                                    </li> --}}
+                                 
                                 </ul>
                             </div>
 
