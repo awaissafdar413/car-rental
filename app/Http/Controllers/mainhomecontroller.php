@@ -13,13 +13,21 @@ use Illuminate\Support\Facades\Hash;
 class mainhomecontroller extends Controller
 {
     function car_show(request $request){
-        $types = brand::get();
-        $query = vehicle::query();
-        if($request->ajax())
-        {
-            if(empty($request->category)){
-                $cars = $query->get();
-                if($cars)
+
+
+            $types = brand::get();
+            $cars = vehicle::when($request->filled('category'), function($query) use($request){
+                $query->where('car_type', $request->category);
+            })->when($request->filled('range_min') || $request->filled('range_max'), function($query) use ($request){
+// dd($request->range_min,$request->range_max);
+                $query->where([
+                    ['car_rent', '>=', $request->range_min],
+                    ['car_rent', '<=', $request->range_max]
+                ]);
+            })->get();
+
+            if($request->ajax())
+            {
                 $output ='';
                 {
                     foreach($cars as $car)
@@ -65,58 +73,14 @@ class mainhomecontroller extends Controller
                 }
                 return response()->json($output);
 
-            }else{
-                $cars = $query->where(['car_type'=>$request->category])->get();
-                if($cars)
-                $output ='';
-                {
-                    foreach($cars as $car)
-                    {
-                        $output .=
-                        '
-                        <div class="col-xl-4 col-lg-6">
-                        <div class="de-item mb30">
-                                <div class="d-img">
-                                    <img src="'. $car->car_image .'" class="img-fluid"
-                                        style="width: 100%;height: 240px;" alt=" '.$car->car_name .'">
-                                </div>
-                                <div class="d-info">
-                                    <div class="d-text">
-                                        <a class="h2" href="">
-                                        <a class="h2" href="">
-                                            <h3> '.$car->car_name .'</h3>
-                                        </a>
-                                        <div class="d-item_like">
-                                            <i class="fa fa-heart"></i><span> '.$car->car_review.' </span>
-                                        </div>
-                                        <div class="d-atr-group">
-                                            <span class="d-atr"><img src="images/icons/1-green.svg" alt="">
-                                            '.$car->car_passenger.' </span>
-                                            <span class="d-atr"><img src="images/icons/3-green.svg" alt="">
-                                            '.$car->car_gate.' </span>
-                                            <span class="d-atr"><img src="images/icons/4-green.svg" alt="">
-                                            '.$car->car_type .'</span>
-                                            <span class="d-atr"> '.$car->brand_name .'</span>
-                                        </div>
-                                        <div class="d-price">
-                                            Daily rate from <span>$ '.$car->car_rent.' </span>
-                                            <a class="btn-main" href="">Rent
-                                            <a class="btn-main" href="">Rent
-                                                Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        ';
-                    }
-                }
-                return response()->json($output);
+            }else {
+
+                return view('car',compact('cars','types'));
             }
-        }
-        $cars = $query->get();
-        return view('car',compact('cars','types'));
+
+
     }
+
     function car_show_home(request $request){
         $blogs=blog::orderBy('created_at')->limit(3)->get();
         $query = vehicle::query();
