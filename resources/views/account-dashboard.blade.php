@@ -29,7 +29,8 @@
                                 @foreach ($users as $user)
                                 <div class="profile_avatar">
                                     <div class="profile_img">
-                                        <img src="{{ $user->profile_photo_path }}" alt="">
+                                        <img src="{{asset('images/profile/1.png')}}" class="img-fluid" alt="">
+                                        {{-- <img src="{{ $user->profile_photo_path }}" alt=""> --}}
                                     </div>
                                     <div class="profile_name">
                                         <h4>
