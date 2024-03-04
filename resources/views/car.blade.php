@@ -141,9 +141,8 @@
                             </div>
 
                         </div>
-                    </div> --}}
-
-                        <div class="item_filter_group">
+                    </div>
+                     <div class="item_filter_group">
                             <h4>Car Engine Capacity (cc)</h4>
                             <div class="de_form">
                                 <div class="de_checkbox">
@@ -167,7 +166,7 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="item_filter_group">
                             <h4>Price ($)</h4>
@@ -199,7 +198,7 @@
                                 <div class="col-xl-4 col-lg-6">
                                     <div class="de-item mb30">
                                         <div class="d-img">
-                                            <img src="{{ $car->car_image }}" class="img-fluid"
+                                            <img src="images/cars/{{ $car->car_image }}.jpg" class="img-fluid"
                                                 style="width: 100%;height: 240px;" alt="{{ $car->car_name }}">
                                         </div>
                                         <div class="d-info">

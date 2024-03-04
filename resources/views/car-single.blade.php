@@ -24,7 +24,7 @@
                         <div class="col-lg-6">
                             {{-- <div id="slider-carousel" class="owl-carousel"> --}}
                                 <div class="item">
-                                    <img src="{{asset($car->car_image)}}" alt="" >
+                                    <img src="{{asset('images/cars/'.$car->car_image.'.jpg')}}" class="img-fluid" alt="" >
                                 </div>
                                 {{-- <div class="item">
                                     <img src="images/car-single/2.jpg" alt="">
