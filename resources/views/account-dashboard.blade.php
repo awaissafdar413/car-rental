@@ -161,90 +161,34 @@
                             <div class="card padding30 rounded-5">
                                 <h4>My Favorites</h4>
                                 <div class="spacer-10"></div>
+                                @foreach ($favourites as $favourite )
                                 <div class="de-item-list no-border mb30">
                                     <div class="d-img">
-                                        <img src="images/cars/jeep-renegade.jpg" class="img-fluid" alt="">
+                                        <img src="{{ $favourite->vehicle->car_image }}" class="img-fluid" alt="">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
-                                            <h4>Jeep Renegade</h4>
+                                            <h4>{{ $favourite->vehicle->car_name }}</h4>
                                             <div class="d-atr-group">
                                                 <ul class="d-atr">
-                                                    <li><span>Seats:</span>4</li>
-                                                    <li><span>Luggage:</span>2</li>
-                                                    <li><span>Doors:</span>4</li>
-                                                    <li><span>Fuel:</span>Petrol</li>
-                                                    <li><span>Horsepower:</span>500</li>
-                                                    <li><span>Engine:</span>3000</li>
-                                                    <li><span>Drive:</span>4x4</li>
-                                                    <li><span>Type:</span>Hatchback</li>
+                                                    <li><span>Seats:</span>{{ $favourite->vehicle->car_passenger }}</li>
+                                                    <li><span>Luggage:</span>{{ $favourite->vehicle->car_luggage }}</li>
+                                                    <li><span>Doors:</span>{{ $favourite->vehicle->car_gate }}</li>
+                                                    <li><span>Fuel:</span>{{ $favourite->vehicle->car_fuel_type }}</li>
+                                                    <li><span>Engine:</span>{{ $favourite->vehicle->car_engine }}</li>
+                                                    <li><span>Type:</span>{{ $favourite->vehicle->brand->brand_name }}</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="d-price">
-                                        Daily rate from <span>$265</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                        Daily rate from <span>{{ $favourite->vehicle->car_rent }}</span>
+                                        <a class="btn-main" href="{{ route('singlecar', $favourite->vehicle->id) }}">Rent
+                                            Now</a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-
-                                <div class="de-item-list no-border mb30">
-                                    <div class="d-img">
-                                        <img src="images/cars/bmw-m5.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="d-info">
-                                        <div class="d-text">
-                                            <h4>BMW M2</h4>
-                                            <div class="d-atr-group">
-                                                <ul class="d-atr">
-                                                    <li><span>Seats:</span>4</li>
-                                                    <li><span>Luggage:</span>2</li>
-                                                    <li><span>Doors:</span>4</li>
-                                                    <li><span>Fuel:</span>Petrol</li>
-                                                    <li><span>Horsepower:</span>500</li>
-                                                    <li><span>Engine:</span>3000</li>
-                                                    <li><span>Drive:</span>4x4</li>
-                                                    <li><span>Type:</span>Hatchback</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-price">
-                                        Daily rate from <span>$244</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-
-                                <div class="de-item-list no-border mb30">
-                                    <div class="d-img">
-                                        <img src="images/cars/ferrari-enzo.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="d-info">
-                                        <div class="d-text">
-                                            <h4>Ferarri Enzo</h4>
-                                            <div class="d-atr-group">
-                                                <ul class="d-atr">
-                                                    <li><span>Seats:</span>4</li>
-                                                    <li><span>Luggage:</span>2</li>
-                                                    <li><span>Doors:</span>4</li>
-                                                    <li><span>Fuel:</span>Petrol</li>
-                                                    <li><span>Horsepower:</span>500</li>
-                                                    <li><span>Engine:</span>3000</li>
-                                                    <li><span>Drive:</span>4x4</li>
-                                                    <li><span>Type:</span>Hatchback</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-price">
-                                        Daily rate from <span>$167</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-
+                                @endforeach
                             </div>
                         </div>
                     </div>
