@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\mainhomecontroller;
 use App\Http\Controllers\admincarcontroller;
+use App\Http\Controllers\googleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,7 +44,7 @@ Route::middleware(['auth','auth.admin'])->group(function () {
     Route::get('/Add-car',[admincarcontroller::class,'addcar_show'])->name('admin.select');
     Route::Post('/Addcar',[admincarcontroller::class,'add_car'])->name('admin.addcar');
     Route::get('delete-car/{id}',[admincarcontroller::class,'car_delete'])->name('admin.cardelete');
-    Route::get('carupdate/{id}',[admincarcontroller::class,'car_update'])->name('admin.update');
+    Route::get('carupdate/{id}',[admincarcontroller::class,'car_update'])->name('admincar.update');
     Route::POST('car-update',[admincarcontroller::class,'car_update_post'])->name('car_update_post');
 
 });
@@ -82,3 +83,7 @@ Route::get('/contact-us', function () {
 })->name('contactus');
 
 
+// login with google
+Route::get('auth/google',[googleController::class,'loginWithGoogle'])->name('loginwithgoogle');
+
+Route::any('/auth/google/callback',[googleController::class,'callbackFromGoogle'])->name('callback');

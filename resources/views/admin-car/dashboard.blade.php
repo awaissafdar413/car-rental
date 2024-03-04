@@ -29,7 +29,7 @@
                         <td width="15%">{{ $data->brand->brand_name }}</td>
                         <td width="15%">{{ $data->car_rent }}</td>
                         <td width="15%">{{ $data->shortdescription }}</td>
-                        <td width="15%"><a href="{{ route('admin.update',$data->id) }}" class="btn btn-danger btn-sm">Update</a></td>
+                        <td width="15%"><a href="{{ route('admincar.update',$data->id) }}" class="btn btn-danger btn-sm">Update</a></td>
                         <td><a href="{{ route('admin.cardelete',$data->id) }}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>

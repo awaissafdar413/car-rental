@@ -58,7 +58,7 @@
                                         class="btn-main btn-fullwidth rounded-3" >Sign Up</a>
                                 </div>
                                 <div class="col-lg-6">
-                                    <a class="btn-sc btn-fullwidth mb10" href="#"><img src="images/svg/google_icon.svg"
+                                    <a class="btn-sc btn-fullwidth mb10" href="{{ route('loginwithgoogle') }}"><img src="images/svg/google_icon.svg"
                                             alt="">Google</a>
                                 </div>
                                 <div class="col-lg-6">
