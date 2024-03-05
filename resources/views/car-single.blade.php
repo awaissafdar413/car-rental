@@ -262,8 +262,8 @@
                                         </div>
                                     </div>
 
-                                    <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth">
-
+                                    {{-- <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth"> --}}
+                                    <a target="_blank" href="{{route('map')}}" class="btn-main btn-fullwidth">Book Now</a>
                                     <div class="clearfix"></div>
 
                                 </form>

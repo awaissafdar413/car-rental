@@ -83,6 +83,9 @@ Route::get('/gallery', function () {
 Route::get('/contact-us', function () {
     return view('contact');
 })->name('contactus');
+Route::get('/map', function () {
+    return view('map');
+})->name('map');
 
 
 
