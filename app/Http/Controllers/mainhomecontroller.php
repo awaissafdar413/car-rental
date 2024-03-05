@@ -30,11 +30,8 @@ class mainhomecontroller extends Controller
         })->get();
 
         if ($request->ajax()) {
-            $favourite= new favorite;
-            $favourite->car_id=$request->car_id;
-            $favourite->user_id=Auth::user()->id;
-            $favourite->save();
-            $output = ''; {
+            if($request->filled('category') || $request->filled('range_min') ||$request->filled('range_max') )
+           { $output = ''; {
                 foreach ($cars as $car) {
                     $output .=
                         '
@@ -51,7 +48,9 @@ class mainhomecontroller extends Controller
                                             <h3> ' . $car->car_name . '</h3>
                                         </a>
                                         <div class="d-item_like">
-                                            <i class="fa fa-heart"></i><span> ' . $car->car_review . ' </span>
+                                        <a href="javascript:void(0);" onclick="addtofavourite({{'. $car->id .'}})"><i
+
+                                        class="fa fa-heart"></i> </a> <span>' . $car->car_review . ' </span>
                                         </div>
                                         <div class="d-atr-group">
                                             <span class="d-atr"><img src="images/icons/1-green.svg" alt="">
@@ -74,12 +73,26 @@ class mainhomecontroller extends Controller
                             </div>
                         ';
                 }
+
+                return response()->json($output);
             }
-            return response()->json($output);
+        }
+        else{
+            $favourite= new favorite;
+            $favourite->car_id=$request->car_id;
+            $favourite->user_id=Auth::user()->id;
+            $favourite->save();
+        }
+
 
         } else {
 
             return view('car', compact('cars', 'types'));
+        }
+        if($request->ajax())
+        {
+
+
         }
 
 

@@ -19,6 +19,17 @@
     <link href="{{ asset('css/coloring.css') }}" rel="stylesheet" type="text/css">
     <!-- color scheme -->
     <link id="colors" href="{{ asset('css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css">
+    {{-- <style>
+        .active-nav {
+    color: #1ecb15 !important;
+    height: 20px;
+    font-size: 18px;
+    border-radius: 90px 90px 0px 0px;
+    background: #fff;
+    font-weight: 900 !important;
+    margin-top: 5px;
+}
+    </style> --}}
 </head>
 
 <body onload="initialize()" class="dark-scheme">
@@ -71,24 +82,24 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
-                                    <li><a class="menu-item" href="{{ route('home') }}">Home</a>
+                                    <li><a class="{{Route::is('home') ? 'active-nav' :''}} menu-item" href="{{ route('home') }}">Home</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('car') }}">Cars</a>
+                                    <li><a class="{{Route::is('car') ? 'active-nav' :''}} menu-item" href="{{ route('car') }}">Cars</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('about') }}">about</a>
+                                    <li><a class="{{Route::is('about') ? 'active-nav' :''}} menu-item" href="{{ route('about') }}">about</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('booking') }}">Booking</a>
+                                    <li><a class="{{Route::is('booking') ? 'active-nav' :''}} menu-item" href="{{ route('booking') }}">Booking</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('gallery') }}">Gallery</a>
+                                    <li><a class="{{Route::is('gallery') ? 'active-nav' :''}} menu-item" href="{{ route('gallery') }}">Gallery</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('blog') }}">Blog</a>
+                                    <li><a class="{{Route::is('blog') ? 'active-nav' :''}} menu-item" href="{{ route('blog') }}">Blog</a>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('contactus') }}">Contact</a>
+                                    <li><a class="{{Route::is('contactus') ? 'active-nav' :''}} menu-item" href="{{ route('contactus') }}">Contact</a>
                                     </li>
                                     <li id="admin-social">
                                         @include('components.button_login')
                                     </li>
-                                 
+
                                 </ul>
                             </div>
 
