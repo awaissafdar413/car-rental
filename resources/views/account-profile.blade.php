@@ -44,8 +44,15 @@
                                     <li><a href="{{ route('user.dashboard') }}" ><i class="fa fa-home"></i>Dashboard</a></li>
                                     <li><a class="active" href="{{ route('profile') }}"><i class="fa fa-user"></i>My Profile</a></li>
                                     <li><a href="account-booking.html"><i class="fa fa-calendar"></i>My Orders</a></li>
-                                    <li><a href="account-favorite.html"><i class="fa fa-car"></i>My Favorite Cars</a></li>
-                                    <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+                                    <li><a href="{{route('account-favorite')}}"><i class="fa fa-car"></i>My Favorite Cars</a></li>
+                                    <li>
+                                        <a href="{{route('logout')}}"
+                                        onclick="event.preventDefault();document.getElementById('frmlogout').submit();"
+                                        class="d-block"><i class="fa fa-sign-out"></i>Sign Out</a>
+                                    <form id="frmlogout" action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                    </form>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

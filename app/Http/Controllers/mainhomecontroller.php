@@ -118,6 +118,13 @@ class mainhomecontroller extends Controller
         $users = user::where('id', $id)->get();
         return view('account-dashboard', compact('favourites','users'));
     }
+    function account_favorite()
+    {
+        $id = auth()->user()->id;
+        $favourites=favorite::where('user_id',$id)->get();
+        $users = user::where('id', $id)->get();
+        return view('account-favorite', compact('favourites','users'));
+    }
     function singleuser_dashboard()
     {
         $id = auth()->user()->id;

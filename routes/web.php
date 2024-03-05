@@ -26,9 +26,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [mainhomecontroller::class,'dashboard'])->name('user.dashboard');
+    Route::get('/account-dashboard', [mainhomecontroller::class,'dashboard'])->name('user.dashboard');
     Route::get('/profile', [mainhomecontroller::class,'singleuser_dashboard'])->name('profile');
     Route::Post('/profile/{id}', [mainhomecontroller::class,'singleuser_dashboard_update'])->name('profile_update');
+    Route::get('/account-favorite', [mainhomecontroller::class,'account_favorite'])->name('account-favorite');
 });
 
 Route::middleware(['auth','auth.admin'])->group(function () {
@@ -78,9 +79,12 @@ Route::get('/register', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
+
 Route::get('/contact-us', function () {
     return view('contact');
 })->name('contactus');
+
+
 
 
 // login with google
