@@ -35,7 +35,7 @@ class WelcomeMailNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line('Hello, I am Awais Talking from car rntaly I am very happy to tell you that you account is verified for our services')
+                    ->line('Hello, I am Awais Talking from car rentaly I am very happy to tell you that you account is verified for our services')
                     ->line('The introduction to the notification.')
                     ->action('Click to order', url('http://127.0.0.1:8000/car'))
                     ->line('Thank you for using our application!');

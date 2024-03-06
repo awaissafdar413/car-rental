@@ -1,12 +1,16 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\mainhomecontroller;
 use App\Http\Controllers\admincarcontroller;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\googleController;
+use App\Http\Controllers\mainhomecontroller;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -79,10 +83,6 @@ Route::get('/register', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
-
-Route::get('/contact-us', function () {
-    return view('contact');
-})->name('contactus');
 Route::get('/map', function () {
     return view('map');
 })->name('map');
@@ -94,3 +94,9 @@ Route::get('/map', function () {
 Route::get('auth/google',[googleController::class,'loginWithGoogle'])->name('loginwithgoogle');
 
 Route::any('/auth/google/callback',[googleController::class,'callbackFromGoogle'])->name('callback');
+
+
+//contact us page
+
+Route::get('contact-us',[ContactController::class,'index'])->name('contactus');
+Route::post('contact-us',[ContactController::class,'store'])->name('contact.us.store');
