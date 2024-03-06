@@ -145,14 +145,14 @@ class mainhomecontroller extends Controller
         $users = User::where('id', $id)->get();
         return view('account-profile', compact('users'));
     }
-    function singleuser_dashboard_update($id, request $request)
+    function checkout( request $request)
     {
-        $users = DB::table('users')->where('id', $id)->update([
-            'name' => $request->username,
-            'email' => $request->email_address,
-            'password' => Hash::make($request->user_password),
-        ]);
+        // $users = DB::table('users')->where('id', $id)->update([
+        //     'name' => $request->username,
+        //     'email' => $request->email_address,
+        //     'password' => Hash::make($request->user_password),
+        // ]);
 
-        return redirect()->back();
+        return view('checkoutpage');
     }
 }
