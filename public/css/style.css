@@ -49,6 +49,7 @@
 /* ================================================== */
 
 /* body */
+-
 
 
 /* ================================================== */
@@ -11941,7 +11942,7 @@ i.bg-color-secondary {
 .dark-scheme .input-max{
     color: #fff;
     background: none;
-    background: rgba(255, 255, 255, .05);
+    background: rgba(255, 255, 255, .05);x
 }
 
 .text-uppercae{

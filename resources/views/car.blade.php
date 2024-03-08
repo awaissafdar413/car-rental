@@ -238,7 +238,6 @@
                         @endforeach
 
                     </div>
-                   
                 </div>
             </div>
         </div>
@@ -318,13 +317,3 @@
 </script>
 @endpush
 @endsection
-
-@push('style')
-<style>
-    .active{
-        font-size: 30px;
-        color: #000;
-        font-weight: 900;
-    }
-</style>
-@endpush
