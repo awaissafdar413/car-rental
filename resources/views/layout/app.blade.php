@@ -124,7 +124,7 @@
         <a href="#" id="back-to-top"></a>
         <!-- footer begin -->
         <!-- Start of ChatBot (www.chatbot.com) code -->
-     <script type="text/javascript">
+     {{-- <script type="text/javascript">
             window.__be = window.__be || {};
     window.__be.id = "65e9fea7020b880007342634";
     (function() {
@@ -136,7 +136,7 @@
         <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/"
                 rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a
                 href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-        <!-- End of ChatBot code -->
+        <!-- End of ChatBot code --> --}}
         <footer class="text-light">
             <div class="container">
                 <div class="row g-custom-x">
@@ -202,7 +202,8 @@
                             <div class="de-flex">
                                 <div class="de-flex-col">
                                     <a href="{{ route('home') }}">
-                                        Copyright 2023 - By Awais
+                                        Copyright{{ date('Y')
+                                    }}- By Awais
                                     </a>
                                 </div>
                                 <ul class="menu-simple">
