@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
     <title>Rentaly </title>
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
@@ -19,17 +20,6 @@
     <link href="{{ asset('css/coloring.css') }}" rel="stylesheet" type="text/css">
     <!-- color scheme -->
     <link id="colors" href="{{ asset('css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css">
-    {{-- <style>
-        .active-nav {
-    color: #1ecb15 !important;
-    height: 20px;
-    font-size: 18px;
-    border-radius: 90px 90px 0px 0px;
-    background: #fff;
-    font-weight: 900 !important;
-    margin-top: 5px;
-}
-    </style> --}}
 </head>
 
 <body onload="initialize()" class="dark-scheme">
@@ -40,15 +30,17 @@
         <!-- page preloader close -->
 
         <!-- header begin -->
-         <!-- header begin -->
-         <header class="transparent has-topbar">
+        <!-- header begin -->
+        <header class="transparent has-topbar">
             <div id="topbar" class="topbar-dark text-light">
                 <div class="container">
                     <div class="topbar-left xs-hide">
                         <div class="topbar-widget">
                             <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+208 333 9296</a></div>
-                            <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>contact@rentaly.com</a></div>
-                            <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>
+                            <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>contact@rentaly.com</a>
+                            </div>
+                            <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 -
+                                    18.00</a></div>
                         </div>
                     </div>
 
@@ -73,8 +65,8 @@
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="{{ route('home') }}">
-                                            <img class="logo-1" src="{{ asset('./images/logo-light.png') }}" >
-                                            <img class="logo-2" src="{{ asset('./images/logo-light.png') }}" >
+                                            <img class="logo-1" src="{{ asset('./images/logo-light.png') }}">
+                                            <img class="logo-2" src="{{ asset('./images/logo-light.png') }}">
                                         </a>
                                     </div>
                                     <!-- logo close -->
@@ -82,19 +74,26 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
-                                    <li><a class="{{Route::is('home') ? 'active-nav' :''}} menu-item" href="{{ route('home') }}">Home</a>
+                                    <li><a class="{{Route::is('home') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('home') }}">Home</a>
                                     </li>
-                                    <li><a class="{{Route::is('car') ? 'active-nav' :''}} menu-item" href="{{ route('car') }}">Cars</a>
+                                    <li><a class="{{Route::is('car') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('car') }}">Cars</a>
                                     </li>
-                                    <li><a class="{{Route::is('about') ? 'active-nav' :''}} menu-item" href="{{ route('about') }}">about</a>
+                                    <li><a class="{{Route::is('about') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('about') }}">about</a>
                                     </li>
-                                    <li><a class="{{Route::is('booking') ? 'active-nav' :''}} menu-item" href="{{ route('booking') }}">Booking</a>
+                                    <li><a class="{{Route::is('booking') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('booking') }}">Booking</a>
                                     </li>
-                                    <li><a class="{{Route::is('gallery') ? 'active-nav' :''}} menu-item" href="{{ route('gallery') }}">Gallery</a>
+                                    <li><a class="{{Route::is('gallery') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('gallery') }}">Gallery</a>
                                     </li>
-                                    <li><a class="{{Route::is('blog') ? 'active-nav' :''}} menu-item" href="{{ route('blog') }}">Blog</a>
+                                    <li><a class="{{Route::is('blog') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('blog') }}">Blog</a>
                                     </li>
-                                    <li><a class="{{Route::is('contactus') ? 'active-nav' :''}} menu-item" href="{{ route('contactus') }}">Contact</a>
+                                    <li><a class="{{Route::is('contactus') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('contactus') }}">Contact</a>
                                     </li>
                                     <li id="admin-social">
                                         @include('components.button_login')
@@ -104,7 +103,8 @@
                             </div>
 
                             <div class="de-flex-col">
-                                <div class="menu_side_area" style="background-size: 100%; background-repeat: no-repeat;">
+                                <div class="menu_side_area"
+                                    style="background-size: 100%; background-repeat: no-repeat;">
                                     @include('components.button_login')
                                     <span id="menu-btn"></span>
                                 </div>
@@ -123,13 +123,29 @@
         <!-- content close -->
         <a href="#" id="back-to-top"></a>
         <!-- footer begin -->
+        <!-- Start of ChatBot (www.chatbot.com) code -->
+        {{-- <script type="text/javascript">
+            window.__be = window.__be || {};
+    window.__be.id = "65e9fea7020b880007342634";
+    (function() {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+        </script>
+        <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/"
+                rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a
+                href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript> --}}
+        <!-- End of ChatBot code -->
         <footer class="text-light">
             <div class="container">
                 <div class="row g-custom-x">
                     <div class="col-lg-3">
                         <div class="widget">
                             <h5>About Rentaly</h5>
-                            <p>Where quality meets affordability. We understand the importance of a smooth and enjoyable journey without the burden of excessive costs. That's why we have meticulously crafted our offerings to provide you with top-notch vehicles at minimum expense.</p>
+                            <p>Where quality meets affordability. We understand the importance of a smooth and enjoyable
+                                journey without the burden of excessive costs. That's why we have meticulously crafted
+                                our offerings to provide you with top-notch vehicles at minimum expense.</p>
                         </div>
                     </div>
 
@@ -137,10 +153,13 @@
                         <div class="widget">
                             <h5>Contact Info</h5>
                             <address class="s1">
-                                <span><i class="id-color fa fa-map-marker fa-lg"></i>08 W 36th St, New York, NY 10001</span>
+                                <span><i class="id-color fa fa-map-marker fa-lg"></i>08 W 36th St, New York, NY
+                                    10001</span>
                                 <span><i class="id-color fa fa-phone fa-lg"></i>+1 333 9296</span>
-                                <span><i class="id-color fa fa-envelope-o fa-lg"></i><a href="mailto:contact@example.com">contact@example.com</a></span>
-                                <span><i class="id-color fa fa-file-pdf-o fa-lg"></i><a href="#">Download Brochure</a></span>
+                                <span><i class="id-color fa fa-envelope-o fa-lg"></i><a
+                                        href="mailto:contact@example.com">contact@example.com</a></span>
+                                <span><i class="id-color fa fa-file-pdf-o fa-lg"></i><a href="#">Download
+                                        Brochure</a></span>
                             </address>
                         </div>
                     </div>
@@ -198,31 +217,13 @@
         </footer>
         <!-- footer close -->
     </div>
-    <!-- Start of ChatBot (www.chatbot.com) code -->
-<script type="text/javascript">
-    window.__be = window.__be || {};
-    window.__be.id = "65e9fea7020b880007342634";
-    (function() {
-        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
-        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
-    })();
-</script>
-<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-<!-- End of ChatBot code -->
-    {{-- <div id="selector">
-        <div id="demo-rtl" class="sc-opt">
-            <div class="sc-icon">RTL</div><span class="sc-val">Click to Enable</span>
-        </div>
-    </div> --}}
 
     <!-- Javascript Files
     ================================================== -->
     <script src="{{ asset('js/plugins.js') }}"></script>
-    <script src="{{ asset("js/designesia.js") }}"></script>
+    <script src="{{ asset(" js/designesia.js") }}"></script>
     @stack('script')
 
 </body>
 
 </html>
-
