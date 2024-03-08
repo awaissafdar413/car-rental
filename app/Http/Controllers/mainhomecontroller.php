@@ -17,6 +17,7 @@ class mainhomecontroller extends Controller
 {
     function car_show(request $request)
     {
+
         $types = brand::get();
         $cars = vehicle::when($request->filled('category'), function ($query) use ($request) {
             $query->where('car_type', $request->category);
@@ -88,6 +89,13 @@ class mainhomecontroller extends Controller
 
             return view('car', compact('cars', 'types'));
         }
+        if($request->ajax())
+        {
+
+
+        }
+
+
     }
 
     function car_show_home(request $request)

@@ -334,14 +334,13 @@
                     <div class="spacer-20"></div>
                 </div>
 
-                @if (count($blogs) >= 1)
                 @foreach ($blogs as $blog)
                 <div class="col-lg-4">
                     <div class="bloglist s2 item">
                         <div class="post-content">
                             <div class="post-image" style="height: 265px;">
                                 <div class="date-box">
-                                    <div class="m" style="font-size: 18px">
+                                    <div class="m " style="font-size: 18px">
                                         {{ $blog->created_at->diffForHumans() }}</div>
                                 </div>
                                 <img alt="" src="{{ $blog->featuredimage }}" class="lazy img-fluid"
@@ -358,9 +357,7 @@
                     </div>
                 </div>
                 @endforeach
-                @else
-                <h1 class="text-center">No &nbsp;&nbsp; Record &nbsp;&nbsp; Found</h1>
-                @endif
+
             </div>
         </div>
     </section>
