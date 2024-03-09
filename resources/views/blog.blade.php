@@ -27,6 +27,7 @@
     <section id="section-news" class=" mt-50" aria-label="section">
         <div class="container">
             <div class="row">
+                @if (count($blogs)>=1)
                 @foreach ($blogs as $blog )
                 <div class="col-lg-4 mb20">
                     <div class="bloglist s2 item">
@@ -36,7 +37,7 @@
                                     <div class="m">{{ $blog->created_at->diffForHumans()}}</div>
                                     {{-- <div class="d">MAR</div> --}}
                                 </div>
-                                <img alt="" src="images/news/pic-blog-1.jpg" class="lazy">
+                                <img alt="" src="{{$blog->featuredimage}}" class="lazy">
                             </div>
                             <div class="post-text">
                                 <h4><a href="{{ route('blog-single',$blog->slug) }}">{{ $blog->title }}<span></span></a></h4>
@@ -47,6 +48,13 @@
                     </div>
                 </div>
                 @endforeach
+                @else
+                <div class="col-12">
+                    <div class="h1 text-uppercase text-center mt-5">
+                        No Record found
+                    </div>
+                </div>
+                @endif
 
                 {{-- <div class="col-lg-6 mb20">
                     <div class="bloglist s2 item">
@@ -151,7 +159,7 @@
                 <div class="spacer-single"></div>
 
                 <div class="col-md-12">
-                    <ul class="pagination">
+                    {{-- <ul class="pagination">
                         <li><a href="#">Prev</a></li>
                         <li class="active"><a href="#">1</a></li>
                         <li><a href="#">2</a></li>
@@ -159,7 +167,8 @@
                         <li><a href="#">4</a></li>
                         <li><a href="#">5</a></li>
                         <li><a href="#">Next</a></li>
-                    </ul>
+                    </ul> --}}
+                    {!!$blogs->links() !!}
                 </div>
 
             </div>

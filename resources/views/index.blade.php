@@ -333,7 +333,7 @@
                         insights, and analysis.</p>
                     <div class="spacer-20"></div>
                 </div>
-
+                @if (count($blogs)>1)
                 @foreach ($blogs as $blog)
                 <div class="col-lg-4">
                     <div class="bloglist s2 item">
@@ -357,6 +357,14 @@
                     </div>
                 </div>
                 @endforeach
+                @else
+                <div class="col-12">
+                    <div class="h1 text-uppercase text-center mt-5">
+                        No Record found
+                    </div>
+                </div>
+                @endif
+
 
             </div>
         </div>

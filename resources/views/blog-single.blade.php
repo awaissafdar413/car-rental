@@ -4,7 +4,7 @@
             <!-- section begin -->
             @foreach ($blogs as $blog )
             <section id="subheader" class="jarallax text-light">
-                <img src="{{ $blog->featuredimage }}" class="jarallax-img" alt="">
+                <img alt="" src="{{ asset( $blog->featuredimage) }}" class="jarallax-img" style="opacity: 0.2">
                     <div class="center-y relative text-center">
                         <div class="container">
                             <div class="row">
@@ -18,7 +18,7 @@
             </section>
             @endforeach
             <!-- section close -->
-
+ 
             <!-- section begin -->
 			<section aria-label="section">
                 <div class="container">
@@ -29,7 +29,7 @@
 
                             <div class="blog-read">
 
-                                <img alt="" src="{{ $blog->featuredimage }}" class="img-fullwidth mb30">
+                                <img alt="" src="{{ asset( $blog->featuredimage) }}" class="img-fullwidth mb30">
 
                                 <div class="post-text">
                                    {!! $blog->blog !!}

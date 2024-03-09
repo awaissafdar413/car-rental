@@ -107,7 +107,7 @@ class mainhomecontroller extends Controller
     }
     function blog_show(request $request)
     {
-        $blogs = blog::all();
+        $blogs = blog::paginate(10);
         return view('blog', compact('blogs'));
     }
     function blog_single($slug)

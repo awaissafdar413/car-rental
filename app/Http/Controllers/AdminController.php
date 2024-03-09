@@ -26,11 +26,11 @@ class AdminController extends Controller
     $blog= new blog;
     $old_slug=$request->slug;
 
-$final_slug = str_replace(' ', '_',$old_slug);
+$final_slug = str_replace(' ','_',$old_slug);
 $slug = strtolower($final_slug);
     $blog->title=$request->input('title');
     $blog->keyword=$request->input('keyword');
-    $blog->slug=$request->input('slug');
+    $blog->slug=$final_slug;
     $blog->description=$request->input('description');
     $blog->blog=$request->input('content');
     $blog->featuredimage=$path.$filename;
