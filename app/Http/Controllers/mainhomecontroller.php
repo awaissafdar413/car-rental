@@ -113,8 +113,9 @@ class mainhomecontroller extends Controller
     function blog_single($slug)
     {
         $blogs = blog::where('slug', $slug)->get();
+        $datas = blog::orderBy('created_at')->get();
         // dd($blogs);
-        return view('blog-single', compact('blogs'));
+        return view('blog-single', compact('blogs','datas'));
     }
     function single_car_show($slug)
     {

@@ -151,10 +151,10 @@
                             <div class="col-lg-6">
                                 <div class="widget">
                                     <ul>
-                                        <li><a href="#">About</a></li>
+                                        <li><a href="{{route('about')}}">About</a></li>
                                         <li><a href="{{ route('blog') }}">Blog</a></li>
                                         <li><a href="#">Careers</a></li>
-                                        <li><a href="#">News</a></li>
+                                        <li><a href="{{ route('blog') }}">News</a></li>
                                         <li><a href="#">Partners</a></li>
                                     </ul>
                                 </div>
