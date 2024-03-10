@@ -193,6 +193,7 @@
 
                 <div class="col-lg-9">
                     <div class="row" id="cards">
+                        @if (count($cars)>0)
                         @foreach ($cars as $car)
                         <div class="col-xl-4 col-lg-6">
                             <div class="de-item mb30">
@@ -236,9 +237,15 @@
                             </div>
                         </div>
                         @endforeach
-
+                        @else
+                        <div class="col-12">
+                            <div class="h1 text-uppercase text-center mt-5">
+                                No Record found
+                            </div>
+                        </div>
+                        @endif
                     </div>
-                   
+
                 </div>
             </div>
         </div>
