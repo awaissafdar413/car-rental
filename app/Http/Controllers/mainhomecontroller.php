@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\models\blog;
+use App\Models\User;
+use App\models\brand;
+use App\models\vehicle;
 use App\Models\favorite;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\models\vehicle;
-use App\models\blog;
-use App\models\brand;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -89,12 +89,6 @@ class mainhomecontroller extends Controller
 
             return view('car', compact('cars', 'types'));
         }
-        if($request->ajax())
-        {
-
-
-        }
-
 
     }
 
@@ -146,9 +140,13 @@ class mainhomecontroller extends Controller
         $users = User::where('id', $id)->get();
         return view('account-profile', compact('users'));
     }
+    function route()
+    {
+        return view('map');
+    }
     function checkout( request $request)
     {
-        // $users = DB::table('users')->where('id', $id)->update([
+        // $users = User::where('id', $id)->update([
         //     'name' => $request->username,
         //     'email' => $request->email_address,
         //     'password' => Hash::make($request->user_password),

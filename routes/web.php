@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [mainhomecontroller::class,'singleuser_dashboard'])->name('profile');
     Route::Post('/profile/{id}', [mainhomecontroller::class,'singleuser_dashboard_update'])->name('profile_update');
     Route::get('/account-favorite', [mainhomecontroller::class,'account_favorite'])->name('account-favorite');
+    Route::get('/route',[mainhomecontroller::class,'route'])->name('route');
 });
 
 Route::middleware(['auth','auth.admin'])->group(function () {
@@ -47,11 +48,9 @@ Route::middleware(['auth','auth.admin'])->group(function () {
     Route::Post('/Addcar',[admincarcontroller::class,'add_car'])->name('admin.addcar');
     Route::get('delete-car/{id}',[admincarcontroller::class,'car_delete'])->name('admin.cardelete');
     Route::get('carupdate/{id}',[admincarcontroller::class,'car_update'])->name('admincar.update');
-    Route::POST('car-update',[admincarcontroller::class,'car_update_post'])->name('car_update_post');
+    Route::POST('/car-update',[admincarcontroller::class,'car_update_post'])->name('car_update_post');
 
 });
-
-
 
 
 Route::get('/', [mainhomecontroller::class,'car_show_home'])->name('home');
@@ -84,10 +83,6 @@ Route::get('/register', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
-Route::get('/map', function () {
-    return view('map');
-})->name('map');
-
 
 
 
