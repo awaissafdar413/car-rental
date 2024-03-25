@@ -1,4 +1,7 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly | Contact us </title>
+@endpush
 @section('content')
 <!-- header close -->
 <!-- content begin -->

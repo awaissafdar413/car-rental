@@ -1,4 +1,7 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly | BLog  </title>
+@endpush
 @section('content')
 <!-- header close -->
 <!-- content begin -->

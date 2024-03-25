@@ -1,5 +1,9 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly | Checkout  </title>
+@endpush
 @section('content')
+
 <div class="container" style="margin-top: 15%">
     <div class="card" style="z-index: 5">
         <button class="proceed"><svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">

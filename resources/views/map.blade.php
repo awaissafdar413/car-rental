@@ -1,4 +1,7 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly | Map </title>
+@endpush
 @section('content')
 <!-- section begin -->
 <section id="subheader" class="jarallax text-light">

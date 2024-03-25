@@ -1,4 +1,7 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly | cars </title>
+@endpush
 @section('content')
 
             <!-- section begin -->

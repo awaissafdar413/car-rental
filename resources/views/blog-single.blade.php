@@ -1,4 +1,7 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly | Blog </title>
+@endpush
 @section('content')
     <!-- section begin -->
     @foreach ($blogs as $blog)

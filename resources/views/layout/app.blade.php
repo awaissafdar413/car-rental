@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <title>Rentaly </title>
+     @stack('title')
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -198,7 +198,7 @@
         </footer>
         <!-- footer close -->
     </div>
- 
+
     <!-- Javascript Files
     ================================================== -->
     <script src="{{ asset('js/plugins.js') }}"></script>

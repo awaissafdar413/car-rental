@@ -1,4 +1,7 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly |404 Page  </title>
+@endpush
 @section('content')
 @push('script')
 <style>

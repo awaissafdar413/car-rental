@@ -1,4 +1,7 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly | Gallery </title>
+@endpush
 <!-- header close -->
 <!-- content begin -->
 @section('content')

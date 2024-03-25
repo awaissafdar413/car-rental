@@ -1,4 +1,7 @@
 @extends('layout.app')
+@push('title')
+<title>Rentaly |My Account | {{Auth::User()->name}}  </title>
+@endpush
 @section('content')
     <!-- header close -->
     <!-- content begin -->
