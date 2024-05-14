@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\admincarcontroller;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\googleController;
-use App\Http\Controllers\mainhomecontroller;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\googleController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\admincarcontroller;
+use App\Http\Controllers\mainhomecontroller;
+use App\Http\Controllers\emailmarketingController;
 
 
 
@@ -96,3 +97,6 @@ Route::any('/auth/google/callback',[googleController::class,'callbackFromGoogle'
 
 Route::get('contact-us',[ContactController::class,'index'])->name('contactus');
 Route::post('contact-us',[ContactController::class,'store'])->name('contact.us.store');
+
+// email marketing
+Route::get('emailmarketing/allemail',[emailmarketingController::class,'allemail']);
