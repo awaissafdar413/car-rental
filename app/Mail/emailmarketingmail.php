@@ -13,30 +13,21 @@ class emailmarketingmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $templateData , $subjectData ,$username;
-
-    public function __construct($templateData ,$username, $subjectData )
+    /**
+     * Create a new message instance.
+     */
+    public function __construct()
     {
-        $this->username = $username;
-        $this->templateData = $templateData;
-        $this->subjectData = $subjectData;
+        //
+    }
 
-    }
-    public function build()
-    {
-        // dd(public_path($this->subjectData['attachment']));
-        return $this->view('template.email')->with([
-            'templateData' => $this->templateData,
-            'userName' => $this->username,
-          ]);
-    }
     /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: $this->subjectData['subject'],
+            subject: 'Emailmarketingmail',
         );
     }
 
@@ -46,9 +37,7 @@ class emailmarketingmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            // view: 'template.email',
-        //     $datas=template::where('id',1)->get(),
-        //   dd(  $datas)
+            view: 'view.name',
         );
     }
 
@@ -59,19 +48,6 @@ class emailmarketingmail extends Mailable
      */
     public function attachments(): array
     {
-        if($this->subjectData['attachment'] != " ")
-        {
-        return [
-            Attachment::fromPath( Public_path( $this->subjectData['attachment']))
-            ->as('Muhammad_Awais.pdf')
-            ->withMime('application/pdf'),
-        ];
-    }
-    else{
-        return[
-            //
-            dd($this->subjectData['attachment'])
-        ];
-    }
+        return [];
     }
 }
