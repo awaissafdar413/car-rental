@@ -56,7 +56,9 @@ Route::middleware(['auth','auth.admin'])->group(function () {
     Route::Post('/Add',[EmailmarkeingController::class,'template_add'])->name('admin.addtemplate');
     Route::get('deleted/{id}',[EmailmarkeingController::class,'template_delete'])->name('template.delete');
     Route::get('update/{id}',[EmailmarkeingController::class,'template_update'])->name('template.update');
-    Route::POST('update',[EmailmarkeingController::class,'template_update_post'])->name('template.update');
+    Route::POST('update',[EmailmarkeingController::class,'template_update_post'])->name('template.update_post');
+    Route::get('/add_email',[EmailmarkeingController::class,'add_email'])->name('add_email');
+    Route::POST('/add_email_post',[EmailmarkeingController::class,'add_email_post'])->name('add_email_post');
 
 });
 

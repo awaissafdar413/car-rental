@@ -7,26 +7,20 @@
     </div>
     @endif
     <div class="wrapper wrapper--w680">
-        <div class="card  card-1">
+        <div class="card card-1">
             <div class="card-heading"></div>
             <div class="card-body">
-                <h2 class="title">Add Blog</h2>
-                @foreach ($datas as $data )
-                <form method="POST" action="{{ route('template.update_post') }}" enctype="multipart/form-data">
+                <h2 class="title">Add Email Adress</h2>
+                <form method="POST" action="{{ route('add_email_post') }}" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="id" value="{{ $data->id }}">
                     <div class="input-group">
-                        <input class="input--style-1" type="text" placeholder="Enter SLUG" name="subject" value="{{ $data->subject }}">
+                        <textarea style="width: 100%;height:250px;" class="form-control" placeholder="Enter the email address withe seprated comma"
+                            name="email"></textarea>
                     </div>
-                    <div class="input-group">
-                        <textarea name="content" class="input--style-1">{!! $data->content !!}</textarea>
-                    </div>
-
                     <div class="p-t-20">
-                        <button class="btn btn--radius text-white btn--green" type="submit">Submit</button>
+                        <button class="btn btn--radius btn-main btn--green" type="submit">Add Template</button>
                     </div>
                 </form>
-                @endforeach
             </div>
         </div>
     </div>
@@ -38,6 +32,9 @@
     input{
     font-size: 18px !important;
     padding: 11px 22px !important;
+}
+#cke_content{
+    width: 100% !important;
 }
 </style>
 @endpush

@@ -12,7 +12,7 @@
             <div class="card-body">
                 <h2 class="title">Email Marketing Dashboard </h2>
                 <a href="{{ route('add_template_admin') }}" class="btn btn-lg btn-main my-4">Add Template </a>
-                <a href="{{ route('add_blog_admin') }}" class="btn btn-lg btn-main my-4">Add Email addresses </a>
+                <a href="{{ route('add_email') }}" class="btn btn-lg btn-main my-4">Add Email addresses </a>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -29,7 +29,7 @@
                                     <div class="card-body" style="height: 250px; overflow:hidden">
                                         {!! $template->content !!}
                                     </div>
-                                    <div class="card-footer">
+                                    <div class="card-footer" style="align-items: center;display: flex;justify-content: space-evenly;background-repeat: no-repeat;">
                                         <a href="{{$template->id}}">Send Now</a>
                                         <a href="{{route('template.delete',$template->id)}}">Delete</a>
                                         <a href="{{route('template.update',$template->id)}}">update</a>
@@ -37,6 +37,30 @@
                                 </div>
                             </div>
                         @endforeach
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <table class="table table-stripped">
+                                <thead>
+                                    <tr>
+                                        <td>id</td>
+                                        <td>email</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($emails as $email )
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$email->email}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+
+                            {{ $emails->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

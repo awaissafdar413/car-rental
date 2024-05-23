@@ -11,7 +11,8 @@ class EmailmarkeingController extends Controller
 {
     public function dashboard(){
         $templates=email_template::all();
-        return view('backend.emailmarketing.dashboard',compact('templates'));
+        $emails=emailmarkeing::paginate(15);
+        return view('backend.emailmarketing.dashboard',compact('templates','emails'));
     }
     public function template_add(request $request){
         $blog= new email_template;
@@ -34,15 +35,30 @@ class EmailmarkeingController extends Controller
         $datas=$stud->get();
         return view('backend.emailmarketing.update',compact('datas'));
     }
-    public function blog_update_post(request $request){
-           $blog= email_template::find($id);
+    public function template_update_post(request $request){
         $id=$request->input('id');
-        $blog->title=$request->input('title');
-        $blog->keyword=$request->input('keyword');
+           $blog= email_template::find($id);
         $blog->subject=$request->input('subject');
         $blog->content=$request->input('content');
 
         $blog->update();
         return redirect()->route('admin.emailmarketing');
+       }
+       public function add_email(){
+        return view('backend.emailmarketing.add_email');
+       }
+       public function add_email_post(request $request){
+        $request->validate([
+            'email'=>'required'
+        ]);
+        $emails = $request->input('email');
+        $emailArray = explode(',', $emails);
+        foreach ($emailArray as $email) {
+            $trimmedEmail = trim($email);
+            emailmarkeing::create([
+                'email' => $trimmedEmail
+            ]);
+        }
+        return redirect()->back();
        }
 }
