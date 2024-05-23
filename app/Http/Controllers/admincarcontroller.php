@@ -12,13 +12,13 @@ class admincarcontroller extends Controller
    {
     $datas=vehicle::all();
     // dd($datas);
-    return view("admin-car.dashboard",compact("datas"));
+    return view("backend.car.dashboard",compact("datas"));
    }
 
    public function addcar_show()
    {
     $cars=brand::all();
-    return view("admin-car.addcar",compact("cars"));
+    return view("backend.car.addcar",compact("cars"));
    }
 
    public function add_car(request $request){
@@ -68,7 +68,7 @@ public function car_delete($id){
     $student = new vehicle;
     $stud = $student->where('id',$id);
     $datas=$stud->get();
-    return view('admin-car.update',compact('datas'));
+    return view('backend.car.update',compact('datas'));
    }
 public function car_update_post(request $request){
     $path='';

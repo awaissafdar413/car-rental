@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
    public function blog_show(){
     $datas=blog::all();
-    return view('admin.dashboard',compact('datas'));
+    return view('backend.blog.dashboard',compact('datas'));
    }
 
    public function blog_add(request $request){
@@ -35,11 +35,11 @@ $slug = strtolower($final_slug);
     $blog->blog=$request->input('content');
     $blog->featuredimage=$path.$filename;
     $blog->save();
-    return redirect('/Admin-panel');
+    return redirect()->route('admin.blogdashboard');
    }
 
 public function add_blog_show(){
-    return view('admin.addblog');
+    return view('backend.blog.addblog');
 }
 public function blog_delete($id){
     // $student = new blog;
@@ -52,18 +52,20 @@ public function blog_delete($id){
     $student = new blog;
     $stud = $student->where('id',$id);
     $datas=$stud->get();
-    return view('admin.update',compact('datas'));
-   }
-   public function blog_update_post(request $request){
-    $path= "";
-    $filename = "";
-    if($request->has('image')){
+    return view('backend.blog.update',compact('datas'));
+}
+public function blog_update_post(request $request){
+       $blog= blog::find($id);
+       if($request->has('image')){
+        $path= "";
+        $filename = "";
         $file = $request->file('image');
         $extension= $file->getClientOriginalExtension();
         $filename= time().'.'.$extension;
         $path='upload/blog/';
         $file->move($path, $filename);
 
+        $blog->featuredimage=$path.$filename;
     }
 
 //create slug
@@ -73,16 +75,14 @@ $slug = str_replace(' ', '_',$old_slug);
     //images
     $id=$request->input('id');
     // $blog= blog::where('id',$id);
-    $blog= blog::find($id);
     $blog->title=$request->input('title');
     $blog->keyword=$request->input('keyword');
     $blog->slug=$slug;
     $blog->description=$request->input('description');
     $blog->blog=$request->input('content');
-    $blog->featuredimage=$path.$filename;
 
     $blog->update();
     // dd($blog);
-    return redirect('/Admin-panel');
+    return redirect()->route('admin.blogdashboard');
    }}
 

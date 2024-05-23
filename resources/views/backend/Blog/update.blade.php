@@ -1,5 +1,4 @@
-
-@extends('layout.app')
+@extends('backend.layout.app')
 @section('content')
 <div class="page-wrapper  p-t-100 p-b-100 font-robo">
     @if (session('message'))
@@ -32,7 +31,7 @@
                     <div class="input-group">
                         <input class="input--style-1" type="text" placeholder="Enter SLUG" name="slug" value="{{ $data->slug }}">
                     </div>
-                   
+
                     <div class="input-group">
                         <label>Enter Featured Image</label>
                         <input class="input--style-1" type="file" placeholder="Enter  image" value="{{ $data->featured_image }}" name="image">

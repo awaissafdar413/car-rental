@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmailmarkeingController;
 use App\Http\Controllers\admincarcontroller;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
@@ -49,6 +50,13 @@ Route::middleware(['auth','auth.admin'])->group(function () {
     Route::get('delete-car/{id}',[admincarcontroller::class,'car_delete'])->name('admin.cardelete');
     Route::get('carupdate/{id}',[admincarcontroller::class,'car_update'])->name('admincar.update');
     Route::POST('/car-update',[admincarcontroller::class,'car_update_post'])->name('car_update_post');
+
+    Route::get('/emailmarketing_dashboard',[EmailmarkeingController::class,'dashboard'])->name('admin.emailmarketing');
+    Route::get('/Add-template',[EmailmarkeingController::class,'add_template_show'])->name('add_template_admin');
+    Route::Post('/Add',[EmailmarkeingController::class,'template_add'])->name('admin.addtemplate');
+    Route::get('deleted/{id}',[EmailmarkeingController::class,'template_delete'])->name('template.delete');
+    Route::get('update/{id}',[EmailmarkeingController::class,'template_update'])->name('template.update');
+    Route::POST('update',[EmailmarkeingController::class,'template_update_post'])->name('template.update');
 
 });
 
