@@ -19,17 +19,6 @@
     <link href="{{ asset('css/coloring.css') }}" rel="stylesheet" type="text/css">
     <!-- color scheme -->
     <link id="colors" href="{{ asset('css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css">
-    {{-- <style>
-        .active-nav {
-    color: #1ecb15 !important;
-    height: 20px;
-    font-size: 18px;
-    border-radius: 90px 90px 0px 0px;
-    background: #fff;
-    font-weight: 900 !important;
-    margin-top: 5px;
-}
-    </style> --}}
 </head>
 
 <body onload="initialize()" class="dark-scheme">

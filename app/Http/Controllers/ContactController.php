@@ -13,6 +13,11 @@ class ContactController extends Controller
     {
         return view('contact');
     }
+    public function contactUsform()
+    {
+        $datas=contact::all();
+        return view('backend.contact.dashboard',compact('datas'));
+    }
     public function store(Request $request)
     {
         $request->validate(([

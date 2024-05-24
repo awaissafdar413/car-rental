@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
-     @stack('title')
+    @stack('title')
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -19,17 +20,17 @@
     <link href="{{ asset('css/coloring.css') }}" rel="stylesheet" type="text/css">
     <!-- color scheme -->
     <link id="colors" href="{{ asset('css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css">
-    {{-- <style>
-        .active-nav {
-    color: #1ecb15 !important;
-    height: 20px;
-    font-size: 18px;
-    border-radius: 90px 90px 0px 0px;
-    background: #fff;
-    font-weight: 900 !important;
-    margin-top: 5px;
-}
-    </style> --}}
+    <style>
+        /* .active-nav {
+            color: #1ecb15 !important;
+            height: 20px;
+            font-size: 18px;
+            border-radius: 90px 90px 0px 0px;
+            background: #fff;
+            font-weight: 900 !important;
+            margin-top: 5px;
+        } */
+    </style>
 </head>
 
 <body onload="initialize()" class="dark-scheme">
@@ -40,8 +41,8 @@
         <!-- page preloader close -->
 
         <!-- header begin -->
-         <!-- header begin -->
-         <header class="transparent has-topbar">
+        <!-- header begin -->
+        <header class="transparent has-topbar">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -51,8 +52,8 @@
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="{{ route('home') }}">
-                                            <img class="logo-1" src="{{ asset('./images/logo-light.png') }}" >
-                                            <img class="logo-2" src="{{ asset('./images/logo-light.png') }}" >
+                                            <img class="logo-1" src="{{ asset('./images/logo-light.png') }}">
+                                            <img class="logo-2" src="{{ asset('./images/logo-light.png') }}">
                                         </a>
                                     </div>
                                     <!-- logo close -->
@@ -60,19 +61,26 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
-                                    <li><a class="{{Route::is('admin.blogdashboard') ? 'active-nav' :''}} menu-item" href="{{ route('admin.blogdashboard') }}">Blog DAshboard</a>
+                                    <li><a class="{{Route::is('admin.blogdashboard') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('admin.blogdashboard') }}">Blog DAshboard</a>
                                     </li>
-                                    <li><a class="{{Route::is('admin.cardashboard') ? 'active-nav' :''}} menu-item" href="{{ route('admin.cardashboard') }}">Car Dashboard</a>
+                                    <li><a class="{{Route::is('admin.cardashboard') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('admin.cardashboard') }}">Car Dashboard</a>
                                     </li>
-                                    <li><a class="{{Route::is('admin.emailmarketing') ? 'active-nav' :''}} menu-item" href="{{ route('admin.emailmarketing') }}">Email Marketing</a>
+                                    <li><a class="{{Route::is('admin.emailmarketing') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('admin.emailmarketing') }}">Email Marketing</a>
                                     </li>
-                                    <li><a class="{{Route::is('booking') ? 'active-nav' :''}} menu-item" href="{{ route('booking') }}">Booking</a>
+                                   <li><a class="{{Route::is('booking') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('booking') }}">Booking</a>
                                     </li>
-                                    <li><a class="{{Route::is('gallery') ? 'active-nav' :''}} menu-item" href="{{ route('gallery') }}">Gallery</a>
+                                    <li><a class="{{Route::is('gallery') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('gallery') }}">Gallery</a>
                                     </li>
-                                    <li><a class="{{Route::is('blog') ? 'active-nav' :''}} menu-item" href="{{ route('blog') }}">Blog</a>
+                                    <li><a class="{{Route::is('blog') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('blog') }}">Blog</a>
                                     </li>
-                                    <li><a class="{{Route::is('contactus') ? 'active-nav' :''}} menu-item" href="{{ route('contactus') }}">Contact</a>
+                                    <li><a class="{{Route::is('contactus') ? 'active-nav' :''}} menu-item"
+                                            href="{{ route('contactus') }}">Contact</a>
                                     </li>
                                     <li id="admin-social">
                                         @include('components.button_login')
@@ -82,7 +90,8 @@
                             </div>
 
                             <div class="de-flex-col">
-                                <div class="menu_side_area" style="background-size: 100%; background-repeat: no-repeat;">
+                                <div class="menu_side_area"
+                                    style="background-size: 100%; background-repeat: no-repeat;">
                                     @include('components.button_login')
                                     <span id="menu-btn"></span>
                                 </div>
@@ -128,10 +137,9 @@
     <!-- Javascript Files
     ================================================== -->
     <script src="{{ asset('js/plugins.js') }}"></script>
-    <script src="{{ asset("js/designesia.js") }}"></script>
+    <script src="{{ asset(" js/designesia.js") }}"></script>
     @stack('script')
 
 </body>
 
 </html>
-

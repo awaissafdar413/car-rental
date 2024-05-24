@@ -11,7 +11,7 @@
 <body>
 
     <h1> Dear {{ $userName }} , </h1>
-    {!! $templateData->template !!}
+    {!! $templateData->content !!}
 </body>
 
 </html>

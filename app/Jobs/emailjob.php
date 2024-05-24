@@ -38,7 +38,6 @@ class emailjob implements ShouldQueue
     public function handle(): void
     {
         $templateData = email_template::find($this->templateid);
-        // dd($this->user_name);
         Mail::to($this->emaildata['email'])->send(new markwtingmail($templateData, $this->emaildata['name'], $this->subjectData));
     }
 }

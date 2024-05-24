@@ -144,14 +144,20 @@ class mainhomecontroller extends Controller
     {
         return view('map');
     }
-    function checkout( request $request)
+    function checkout()
     {
-        // $users = User::where('id', $id)->update([
-        //     'name' => $request->username,
-        //     'email' => $request->email_address,
-        //     'password' => Hash::make($request->user_password),
-        // ]);
-
         return view('checkoutpage');
+    }
+    function about()
+    {
+        return view('about');
+    }
+    function booking()
+    {
+        return view('booking');
+    }
+    function gallery()
+    {
+        return view('gallery');
     }
 }

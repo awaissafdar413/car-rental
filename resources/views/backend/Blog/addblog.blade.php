@@ -1,6 +1,3 @@
-
-
-
 @extends('backend.layout.app')
 @section('content')
 <div class="page-wrapper  p-t-100 p-b-100 font-robo">

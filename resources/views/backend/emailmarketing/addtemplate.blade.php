@@ -11,6 +11,7 @@
             <div class="card-heading"></div>
             <div class="card-body">
                 <h2 class="title">Add Template</h2>
+                <a href="{{ route('admin.emailmarketing') }}" class="btn btn-md btn-main my-4">Back TO Dashboard</a>
                 <form method="POST" action="{{ route('admin.addtemplate') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group">

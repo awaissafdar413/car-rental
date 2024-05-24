@@ -34,6 +34,12 @@ class EmailmarkeingController extends Controller
         $data = email_template::where('id', $id)->delete();
         return redirect()->back();
     }
+    public function all_email()
+    {
+        // $emails = emailmarkeing::all();
+        $emails = emailmarkeing::paginate(20);
+        return view('backend.emailmarketing.allemail', compact('emails'));
+    }
     public function template_update($id)
     {
         $student = new email_template;
@@ -76,9 +82,9 @@ class EmailmarkeingController extends Controller
         $subjectData = email_template::find($template); // Replace with your model and ID retrieval logic
         // Fetch template using ID or other criteria
         foreach ($emaildatas as $emaildata) {
-            dispatch(new emailjob($emaildata, $template, $subjectData))
-                // ->delay(now()->addMinutes(2));
-                ->delay(now()->addSeconds(20));
+            dispatch(new emailjob($emaildata, $template, $subjectData))->delay(now()->addSeconds(20));
+            // ->delay(now()->addMinutes(2));
+
         }
         return redirect()->back();
     }

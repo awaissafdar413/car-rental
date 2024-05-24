@@ -8,6 +8,7 @@
     @endif
     <div class="wrapper wrapper--w680">
         <div class="card card-1">
+            <a href="{{ route('admin.emailmarketing') }}" class="btn btn-md btn-main my-4">Back TO Dashboard</a>
             <div class="card-heading"></div>
             <div class="card-body">
                 <h2 class="title">Add Email Adress</h2>

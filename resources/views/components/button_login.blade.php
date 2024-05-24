@@ -22,6 +22,12 @@
             <li>
                 <a class="dropdown-item" href="{{route('admin.cardashboard')}}" class="d-block">Car Dashboard</a>
             </li>
+            <li>
+                <a class="dropdown-item" href="{{route('admin.emailmarketing')}}" class="d-block">Email Marketing</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{{route('admin.contactUsform')}}" class="d-block">Contact US Form</a>
+            </li>
 
             @else
             <li>

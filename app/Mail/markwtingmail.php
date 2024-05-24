@@ -27,7 +27,7 @@ class markwtingmail extends Mailable
     }
     public function build()
     {
-        return $this->view('email.marketing')->with([
+        return $this->view('emails.marketing')->with([
             'templateData' => $this->templateData,
             'userName' => $this->username,
         ]);
@@ -48,7 +48,7 @@ class markwtingmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            // view: 'view.name',
         );
     }
 

@@ -28,72 +28,81 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::get('/account-dashboard', [mainhomecontroller::class, 'dashboard'])->name('user.dashboard');
-    Route::get('/profile', [mainhomecontroller::class, 'singleuser_dashboard'])->name('profile');
-    Route::Post('/profile/{id}', [mainhomecontroller::class, 'singleuser_dashboard_update'])->name('profile_update');
-    Route::get('/account-favorite', [mainhomecontroller::class, 'account_favorite'])->name('account-favorite');
-    Route::get('/route', [mainhomecontroller::class, 'route'])->name('route');
+    Route::controller(mainhomecontroller::class)->group(function () {
+        Route::get('/account-dashboard', 'dashboard')->name('user.dashboard');
+        Route::get('/profile', 'singleuser_dashboard')->name('profile');
+        Route::Post('/profile/{id}', 'singleuser_dashboard_update')->name('profile_update');
+        Route::get('/account-favorite', 'account_favorite')->name('account-favorite');
+        Route::get('/route', 'route')->name('route');
+    });
+
 });
 
 Route::middleware(['auth', 'auth.admin'])->group(function () {
-    Route::get('/Admin-panel', [AdminController::class, 'blog_show'])->name('admin.blogdashboard');
-    Route::get('/Add-blog', [AdminController::class, 'add_blog_show'])->name('add_blog_admin');
-    Route::Post('/Add', [AdminController::class, 'blog_add'])->name('admin.addblog');
-    Route::get('deleted/{id}', [AdminController::class, 'blog_delete'])->name('admin.delete');
-    Route::get('update/{id}', [AdminController::class, 'blog_update'])->name('admin.update');
-    Route::POST('update', [AdminController::class, 'blog_update_post'])->name('blog.update');
+    Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+    Route::controller(AdminController::class)->group(function () {
+        Route::get('/Admin-panel', 'blog_show')->name('admin.blogdashboard');
+        Route::get('/Add-blog', 'add_blog_show')->name('add_blog_admin');
+        Route::Post('/Add', 'blog_add')->name('admin.addblog');
+        Route::get('deleted/{id}', 'blog_delete')->name('admin.delete');
+        Route::get('update/{id}', 'blog_update')->name('admin.update');
+        Route::POST('update', 'blog_update_post')->name('blog.update');
+    });
     //car dashboard
+    Route::controller(admincarcontroller::class)->group(function () {
+        Route::get('/car-admin-panel', 'all_car_show')->name('admin.cardashboard');
+        Route::get('/Add-car', 'addcar_show')->name('admin.select');
+        Route::Post('/Addcar', 'add_car')->name('admin.addcar');
+        Route::get('delete-car/{id}', 'car_delete')->name('admin.cardelete');
+        Route::get('carupdate/{id}', 'car_update')->name('admincar.update');
+        Route::POST('/car-update', 'car_update_post')->name('car_update_post');
+    });
 
-    Route::get('/car-admin-panel', [admincarcontroller::class, 'all_car_show'])->name('admin.cardashboard');
-    Route::get('/Add-car', [admincarcontroller::class, 'addcar_show'])->name('admin.select');
-    Route::Post('/Addcar', [admincarcontroller::class, 'add_car'])->name('admin.addcar');
-    Route::get('delete-car/{id}', [admincarcontroller::class, 'car_delete'])->name('admin.cardelete');
-    Route::get('carupdate/{id}', [admincarcontroller::class, 'car_update'])->name('admincar.update');
-    Route::POST('/car-update', [admincarcontroller::class, 'car_update_post'])->name('car_update_post');
 
-    Route::get('/emailmarketing_dashboard', [EmailmarkeingController::class, 'dashboard'])->name('admin.emailmarketing');
-    Route::get('/Add-template', [EmailmarkeingController::class, 'add_template_show'])->name('add_template_admin');
-    Route::Post('/Add', [EmailmarkeingController::class, 'template_add'])->name('admin.addtemplate');
-    Route::get('deleted/{id}', [EmailmarkeingController::class, 'template_delete'])->name('template.delete');
-    Route::get('update/{id}', [EmailmarkeingController::class, 'template_update'])->name('template.update');
-    Route::POST('update', [EmailmarkeingController::class, 'template_update_post'])->name('template.update_post');
-    Route::get('/add_email', [EmailmarkeingController::class, 'add_email'])->name('add_email');
-    Route::get('/send_now', [EmailmarkeingController::class, 'send_now'])->name('send_now');
-    Route::POST('/add_email_post', [EmailmarkeingController::class, 'add_email_post'])->name('add_email_post');
 
+    Route::controller(EmailmarkeingController::class)->group(function () {
+        Route::get('/emailmarketing_dashboard', 'dashboard')->name('admin.emailmarketing');
+        Route::get('/Add-template', 'add_template_show')->name('add_template_admin');
+        Route::Post('/Add', 'template_add')->name('admin.addtemplate');
+        Route::get('deleted/{id}', 'template_delete')->name('template.delete');
+        Route::get('update/{id}', 'template_update')->name('template.update');
+        Route::POST('update', 'template_update_post')->name('template.update_post');
+        Route::get('/add_email', 'add_email')->name('add_email');
+        Route::POST('/add_email_post', 'add_email_post')->name('add_email_post');
+        Route::get('/all_email', 'all_email')->name('all_email');
+        Route::get('/send_now/{id}', 'send_now')->name('send_email');
+    });
 });
 
+Route::controller(mainhomecontroller::class)->group(function () {
+    Route::get('/', 'car_show_home')->name('home');
+    Route::get('/car', 'car_show')->name('car');
+    Route::get('/car/{id}', 'single_car_show')->name('singlecar');
+    Route::get('/blog', 'blog_show')->name('blog');
+    Route::get('/blog/{slug}', 'blog_single')->name('blog-single');
+    Route::get('/checkout', 'checkout')->name('checkout');
+    Route::get('/about','about')->name('about');
+    Route::get('/booking','booking')->name('booking');
+    Route::get('/gallery', 'gallery')->name('gallery');
 
-Route::get('/', [mainhomecontroller::class, 'car_show_home'])->name('home');
+});
 Route::fallback(function () {
     return view('404');
 });
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-Route::get('/car', [mainhomecontroller::class, 'car_show'])->name('car');
-Route::get('/car/{id}', [mainhomecontroller::class, 'single_car_show'])->name('singlecar');
-Route::get('/blog', [mainhomecontroller::class, 'blog_show'])->name('blog');
-Route::get('/blog/{slug}', [mainhomecontroller::class, 'blog_single'])->name('blog-single');
 
 
 
-Route::get('/checkout', [mainhomecontroller::class, 'checkout'])->name('checkout');
 
-Route::get('/booking', function () {
-    return view('booking');
-})->name('booking');
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
-Route::get('/gallery', function () {
-    return view('gallery');
-})->name('gallery');
+
+
+// Route::get('/login', function () {
+//     return view('auth.login');
+// })->name('login');
+// Route::get('/register', function () {
+//     return view('auth.register');
+// })->name('register');
+
 
 
 
@@ -106,4 +115,4 @@ Route::any('/auth/google/callback', [googleController::class, 'callbackFromGoogl
 //contact us page
 
 Route::get('contact-us', [ContactController::class, 'index'])->name('contactus');
-Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+Route::get('contactUsform', [ContactController::class, 'contactUsform'])->name('admin.contactUsform');

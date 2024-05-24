@@ -11,12 +11,14 @@
             <div class="card-heading"></div>
             <div class="card-body">
                 <h2 class="title">Add Blog</h2>
+                <a href="{{ route('admin.emailmarketing') }}" class="btn btn-md btn-main my-4">Back TO Dashboard</a>
                 @foreach ($datas as $data )
                 <form method="POST" action="{{ route('template.update_post') }}" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" value="{{ $data->id }}">
                     <div class="input-group">
-                        <input class="input--style-1" type="text" placeholder="Enter SLUG" name="subject" value="{{ $data->subject }}">
+                        <input class="input--style-1" type="text" placeholder="Enter SLUG" name="subject"
+                            value="{{ $data->subject }}">
                     </div>
                     <div class="input-group">
                         <textarea name="content" class="input--style-1">{!! $data->content !!}</textarea>
@@ -35,10 +37,10 @@
 @push('style')
 <script src="{{ asset('ckeditor/ckeditor/ckeditor.js') }}"></script>
 <style>
-    input{
-    font-size: 18px !important;
-    padding: 11px 22px !important;
-}
+    input {
+        font-size: 18px !important;
+        padding: 11px 22px !important;
+    }
 </style>
 @endpush
 @push('script')
