@@ -71,6 +71,7 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
         Route::POST('/add_email_post', 'add_email_post')->name('add_email_post');
         Route::get('/all_email', 'all_email')->name('all_email');
         Route::get('/send_now/{id}', 'send_now')->name('send_email');
+        Route::get('/email_delete', 'email_delete')->name('email_delete_permanent');
     });
 });
 
@@ -81,8 +82,8 @@ Route::controller(mainhomecontroller::class)->group(function () {
     Route::get('/blog', 'blog_show')->name('blog');
     Route::get('/blog/{slug}', 'blog_single')->name('blog-single');
     Route::get('/checkout', 'checkout')->name('checkout');
-    Route::get('/about','about')->name('about');
-    Route::get('/booking','booking')->name('booking');
+    Route::get('/about', 'about')->name('about');
+    Route::get('/booking', 'booking')->name('booking');
     Route::get('/gallery', 'gallery')->name('gallery');
 
 });

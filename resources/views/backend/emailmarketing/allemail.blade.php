@@ -14,6 +14,7 @@
                 <h2 class="title">All Emails </h2>
                 <div class="container">
                     <a href="{{ route('admin.emailmarketing') }}" class="btn btn-md btn-main my-4">Back TO Dashboard</a>
+                    <a href="{{ route('email_delete_permanent') }}" class="btn btn-md btn-main my-4">Delete ALL</a>
                     <div class="row">
                         <div class="col-md-10">
                             <table class="table table-stripped">

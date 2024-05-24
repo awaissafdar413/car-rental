@@ -79,13 +79,16 @@ class EmailmarkeingController extends Controller
     public function send_now($template)
     {
         $emaildatas = emailmarkeing::all();
-        $subjectData = email_template::find($template); // Replace with your model and ID retrieval logic
-        // Fetch template using ID or other criteria
+        $subjectData = email_template::find($template);
         foreach ($emaildatas as $emaildata) {
             dispatch(new emailjob($emaildata, $template, $subjectData))->delay(now()->addSeconds(20));
-            // ->delay(now()->addMinutes(2));
-
         }
         return redirect()->back();
+    }
+    public function email_delete()
+    {
+        $data = new emailmarkeing;
+        $data->delete();
+        return redirect()->back()->with('message', 'All Emails are deleted');
     }
 }

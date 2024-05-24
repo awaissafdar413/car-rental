@@ -13,7 +13,7 @@
                 <h2 class="title">Email Marketing Dashboard </h2>
                 <a href="{{ route('add_template_admin') }}" class="btn btn-lg btn-main my-4">Add Template </a>
                 <a href="{{ route('add_email') }}" class="btn btn-lg btn-main my-4">Add Email addresses </a>
-                <a href="{{ route('all_email') }}" class="btn btn-lg btn-main my-4">Add Email addresses </a>
+                <a href="{{ route('all_email') }}" class="btn btn-lg btn-main my-4">All Email address</a>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
