@@ -87,8 +87,8 @@ class EmailmarkeingController extends Controller
     }
     public function email_delete()
     {
-        $data = new emailmarkeing;
-        $data->delete();
+        $data =emailmarkeing::truncate();
+        // $data->delete();
         return redirect()->back()->with('message', 'All Emails are deleted');
     }
 }
