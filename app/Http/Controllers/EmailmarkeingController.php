@@ -81,13 +81,14 @@ class EmailmarkeingController extends Controller
         $emaildatas = emailmarkeing::all();
         $subjectData = email_template::find($template);
         foreach ($emaildatas as $emaildata) {
-            dispatch(new emailjob($emaildata, $template, $subjectData))->delay(now()->addSeconds(20));
+            // dispatch(new emailjob($emaildata, $template, $subjectData))->delay(now()->addSeconds(20));
+            emailjob::dispatch($emaildata, $template, $subjectData);
         }
         return redirect()->back();
     }
     public function email_delete()
     {
-        $data =emailmarkeing::truncate();
+        $data =emailmarkeing::delete();
         // $data->delete();
         return redirect()->back()->with('message', 'All Emails are deleted');
     }
