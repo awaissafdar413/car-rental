@@ -16,7 +16,7 @@
             <div class="no-bottom no-top" id="content">
             <div id="top"></div>
             <section id="section-hero" class="jarallax text-light pt50 pb50 vertical-center" aria-label="section">
-                <img src="images/background/11.jpg" class="jarallax-img" alt="">
+                <img src="{{asset('images/background/11.jpg')}}" class="jarallax-img" alt="">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6">

@@ -9,7 +9,7 @@
 
     <!-- section begin -->
     <section id="subheader" class="jarallax text-light">
-        <img src="images/background/2.jpg" class="jarallax-img" alt="">
+        <img src="{{ asset('images/background/2.jpg') }}" class="jarallax-img" alt="">
         <div class="center-y relative text-center">
             <div class="container">
                 <div class="row">
@@ -220,13 +220,13 @@
                                         @endif
 
                                         <div class="d-atr-group">
-                                            <span class="d-atr"><img src="images/icons/1-green.svg" alt="">{{
+                                            <span class="d-atr"><img src="{{ asset('images/icons/1-green.svg') }}" alt="">{{
                                                 $car->car_passenger }}</span>
                                             {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
                                             --}}
-                                            <span class="d-atr"><img src="images/icons/3-green.svg" alt="">{{
+                                            <span class="d-atr"><img src="{{ asset('images/icons/3-green.svg') }}" alt="">{{
                                                 $car->car_gate }}</span>
-                                            <span class="d-atr"><img src="images/icons/4-green.svg" alt="">{{
+                                            <span class="d-atr"><img src="{{ asset('images/icons/3-green.svg') }}" alt="">{{
                                                 $car->car_type }}</span>
                                             <span class="d-atr">{{ $car->brand_name }}</span>
                                         </div>

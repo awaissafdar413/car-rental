@@ -10,7 +10,7 @@
 
     <!-- section begin -->
     <section id="subheader" class="jarallax text-light">
-        <img src="images/background/subheader.jpg" class="jarallax-img" alt="">
+        <img src="{{asset('images/background/subheader.jpg')}}" class="jarallax-img" alt="">
         <div class="center-y relative text-center">
             <div class="container">
                 <div class="row">
@@ -36,7 +36,7 @@
                                 <span class="dih-title">Gallery Title</span>
                             </span>
                             <span class="dih-overlay"></span>
-                            <img src="images/gallery/1.jpg" class="lazy img-fluid" alt="">
+                            <img src="{{asset('images/gallery/1.jpg')}}" class="lazy img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                                 <span class="dih-title">Gallery Title</span>
                             </span>
                             <span class="dih-overlay"></span>
-                            <img src="images/gallery/2.jpg" class="lazy img-fluid" alt="">
+                            <img src="{{asset('images/gallery/2.jpg')}}" class="lazy img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                                 <span class="dih-title">Gallery Title</span>
                             </span>
                             <span class="dih-overlay"></span>
-                            <img src="images/gallery/3.jpg" class="lazy img-fluid" alt="">
+                            <img src="{{asset('images/gallery/3.jpg')}}" class="lazy img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                                 <span class="dih-title">Gallery Title</span>
                             </span>
                             <span class="dih-overlay"></span>
-                            <img src="images/gallery/4.jpg" class="lazy img-fluid" alt="">
+                            <img src="{{asset('images/gallery/4.jpg')}}" class="lazy img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                                 <span class="dih-title">Gallery Title</span>
                             </span>
                             <span class="dih-overlay"></span>
-                            <img src="images/gallery/5.jpg" class="lazy img-fluid" alt="">
+                            <img src="{{asset('images/gallery/5.jpg')}}" class="lazy img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                                 <span class="dih-title">Gallery Title</span>
                             </span>
                             <span class="dih-overlay"></span>
-                            <img src="images/gallery/6.jpg" class="lazy img-fluid" alt="">
+                            <img src="{{asset('images/gallery/6.jpg')}}" class="lazy img-fluid" alt="">
                         </a>
                     </div>
                 </div>

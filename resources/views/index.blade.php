@@ -19,7 +19,7 @@
         <div class="carousel-inner position-relative">
             <!-- Single item -->
             <div class="carousel-item active jarallax">
-                <img src="images/slider/1.jpg" class="jarallax-img" alt="">
+                <img src="{{asset('images/slider/1.jpg')}}" class="jarallax-img" alt="">
                 <div class="mask">
                     <div class="no-top no-bottom">
                         <div class="h-100 v-center">
@@ -42,7 +42,7 @@
 
             <!-- Single item -->
             <div class="carousel-item jarallax">
-                <img src="images/slider/2.jpg" class="jarallax-img" alt="">
+                <img src="{{asset('images/slider/2.jpg')}}" class="jarallax-img" alt="">
                 <div class="mask">
                     <div class="no-top no-bottom">
                         <div class="h-100 v-center">
@@ -65,7 +65,7 @@
 
             <!-- Single item -->
             <div class="carousel-item jarallax">
-                <img src="images/slider/3.jpg" class="jarallax-img" alt="">
+                <img src="{{asset('images/slider/3.jpg')}}" class="jarallax-img" alt="">
                 <div class="mask">
                     <div class="no-top no-bottom">
                         <div class="h-100 v-center">
@@ -117,7 +117,7 @@
                     <div class="col-xl-12">
                         <div class="de-item mb30">
                             <div class="d-img">
-                                <img src="images/cars/{{ $car->car_image }}.jpg" class="img-fluid"
+                                <img src="{{asset('images/cars/'.$car->car_image.'.jpg')}}" class="img-fluid"
                                     style="width: 100%;height: 240px;" alt="{{ $car->car_name }}">
                             </div>
                             <div class="d-info">
@@ -137,14 +137,16 @@
                                     @endif
 
                                     <div class="d-atr-group">
-                                        <span class="d-atr"><img src="images/icons/1-green.svg" alt="">{{
+                                        <span class="d-atr"><img src="{{asset('images/icons/1-green.svg')}}" alt="">{{
+                                            $car->car_gate }}</span>
+                                        <span class="d-atr"><img src="{{asset('images/icons/3-green.svg')}}" alt="">{{
                                             $car->car_passenger }}</span>
-                                        {{-- <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
+                                        <span class="d-atr"><img src="{{asset('images/icons/4-green.svg')}}" alt="">{{
+                                            $car->car_type }}</span>
+                                        {{-- <span class="d-atr"><img src="{{asset('images/icons/2-green.svg"
+                                                alt="">2</span>
                                         --}}
-                                        <span class="d-atr"><img src="images/icons/3-green.svg" alt="">{{ $car->car_gate
-                                            }}</span>
-                                        <span class="d-atr"><img src="images/icons/4-green.svg" alt="">{{ $car->car_type
-                                            }}</span>
+
                                         <span class="d-atr">{{ $car->brand_name }}</span>
                                     </div>
                                     <div class="d-price">
@@ -171,7 +173,7 @@
     </section>
 
     <section class="text-light jarallax">
-        <img src="images/background/9.jpg" class="jarallax-img" alt="">
+        <img src="{{asset('images/background/9.jpg')}}" class="jarallax-img" alt="">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInRight">
@@ -247,7 +249,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <img src="images/misc/car-2.png" alt="" class="img-fluid wow fadeInUp">
+                    <img src="{{asset('images/misc/car-2.png')}}" alt="" class="img-fluid wow fadeInUp">
                 </div>
 
                 <div class="col-lg-3">
@@ -288,7 +290,7 @@
                                 <span class="by">Stepanie Hutchkiss</span>
                             </blockquote>
                         </div>
-                        <img src="images/testimonial/1.jpg" class="img-fluid" alt="">
+                        <img src="{{asset('images/testimonial/1.jpg')}}" class="img-fluid" alt="">
                     </div>
                 </div>
 
@@ -308,7 +310,7 @@
                                 <span class="by">Jovan Reels</span>
                             </blockquote>
                         </div>
-                        <img src="images/testimonial/2.jpg" class="img-fluid" alt="">
+                        <img src="{{asset('images/testimonial/2.jpg')}}" class="img-fluid" alt="">
                     </div>
                 </div>
 
@@ -328,7 +330,7 @@
                                 <span class="by">Kanesha Keyton</span>
                             </blockquote>
                         </div>
-                        <img src="images/testimonial/3.jpg" class="img-fluid" alt="">
+                        <img src="{{asset('images/testimonial/3.jpg')}}" class="img-fluid" alt="">
                     </div>
                 </div>
 
@@ -355,7 +357,7 @@
                                     <div class="m " style="font-size: 18px">
                                         {{ $blog->created_at->diffForHumans() }}</div>
                                 </div>
-                                <img alt="" src="{{ $blog->featuredimage }}" class="lazy img-fluid"
+                                <img alt="" src="{{asset( $blog->featuredimage)}}" class="lazy img-fluid"
                                     style="height: 265px;">
                             </div>
                             <div class="post-text">
@@ -384,7 +386,7 @@
     </section>
 
     <section class="text-light jarallax" aria-label="section">
-        <img src="images/background/3.jpg" alt="" class="jarallax-img">
+        <img src="{{asset('images/background/3.jpg')}}" alt="" class="jarallax-img">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
